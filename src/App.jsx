@@ -3,19 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import { db } from '../firebase';
 import { getDatabase, ref, query, orderByChild, get, child } from "firebase/database";
+import  {Example} from './exampleChart.jsx';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 const App = () => {
   const [count, setCount] = useState(0);
-  
 
-  const databaseRef = ref(db, 'users');
-  const dbUsers = query(databaseRef);
-  console.log(dbUsers);
-//   onValue(starCountRef, (snapshot) => {
-//   const data = snapshot.val();
-//   updateStarCount(postElement, data);
-// });
   const dbRef = ref(db);
   get(child(dbRef, `users/`)).then((snapshot) => {
     if (snapshot.exists()) {
@@ -29,6 +23,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>hi</h1>
+      <Example />
     </div>
   );
 };

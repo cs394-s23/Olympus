@@ -1,0 +1,590 @@
+,Unique ID,Athlete Name,Date,Workout Name,Workout Time (min),Exercise Name,Set Number,Weight,Reps,Volume,RPE,% 1RM,E 1RM
+,1,Nicholas Scott,3/20/2023,Push 1,72,Tricep Pushdown,1,70,10,700,,,
+,2,Nicholas Scott,3/20/2023,Push 1,72,Tricep Pushdown,2,70,10,700,,,
+,3,Nicholas Scott,3/20/2023,Push 1,72,Tricep Pushdown,3,70,10,700,,,
+,4,Nicholas Scott,3/20/2023,Push 1,72,DB Front Raise,1,45,10,450,,,
+,5,Nicholas Scott,3/20/2023,Push 1,72,DB Front Raise,2,45,10,450,,,
+,6,Nicholas Scott,3/20/2023,Push 1,72,DB Front Raise,3,45,10,450,,,
+,7,Nicholas Scott,3/20/2023,Push 1,72,Bench Press,1,135,10,1350,6,,
+,8,Nicholas Scott,3/20/2023,Push 1,72,Bench Press,2,185,7,1295,7.5,76%,245
+,9,Nicholas Scott,3/20/2023,Push 1,72,Bench Press,3,225,5,1125,9,86%,260
+,10,Nicholas Scott,3/20/2023,Push 1,72,Bench Press,4,230,4,920,9.5,91%,255
+,11,Nicholas Scott,3/20/2023,Push 1,72,Bench Press,5,230,4,920,9.5,91%,255
+,12,Nicholas Scott,3/20/2023,Push 1,72,Bench Press,6,230,3,690,10,96%,240
+,13,Nicholas Scott,3/20/2023,Push 1,72,Bench Press,7,230,3,690,10,96%,240
+,14,Nicholas Scott,3/20/2023,Push 1,72,Arnold Press,1,50,10,500,,,
+,15,Nicholas Scott,3/20/2023,Push 1,72,Arnold Press,2,50,10,500,,,
+,16,Nicholas Scott,3/20/2023,Push 1,72,Arnold Press,3,50,9,450,,,
+,17,Nicholas Scott,3/20/2023,Push 1,72,DB Lateral Raise,1,30,10,300,,,
+,18,Nicholas Scott,3/20/2023,Push 1,72,DB Lateral Raise,2,30,10,300,,,
+,19,Nicholas Scott,3/20/2023,Push 1,72,DB Lateral Raise,3,30,10,300,,,
+,20,Nicholas Scott,3/20/2023,Push 1,72,Tricep EZ Bar Overhead Press,1,65,10,650,,,
+,21,Nicholas Scott,3/20/2023,Push 1,72,Tricep EZ Bar Overhead Press,2,65,10,650,,,
+,22,Nicholas Scott,3/20/2023,Push 1,72,Tricep EZ Bar Overhead Press,3,65,10,650,,,
+,23,Nicholas Scott,3/20/2023,Push 1,72,DB Fly,1,45,10,450,,,
+,24,Nicholas Scott,3/20/2023,Push 1,72,DB Fly,2,45,10,450,,,
+,25,Nicholas Scott,3/20/2023,Push 1,72,DB Fly,3,45,10,450,,,
+,26,Nicholas Scott,3/20/2023,Push 1,72,DB Incline Bench Press,1,75,10,750,,,
+,27,Nicholas Scott,3/20/2023,Push 1,72,DB Incline Bench Press,2,75,10,750,,,
+,28,Nicholas Scott,3/20/2023,Push 1,72,DB Incline Bench Press,3,75,10,750,,,
+,29,Nicholas Scott,3/21/2023,Pull 1,79,Cable Row,1,80,10,800,,,
+,30,Nicholas Scott,3/21/2023,Pull 1,79,Cable Row,2,80,10,800,,,
+,31,Nicholas Scott,3/21/2023,Pull 1,79,Cable Row,3,80,10,800,,,
+,32,Nicholas Scott,3/21/2023,Pull 1,79,Bicep Curl,1,35,10,350,,,
+,33,Nicholas Scott,3/21/2023,Pull 1,79,Bicep Curl,2,35,10,350,,,
+,34,Nicholas Scott,3/21/2023,Pull 1,79,Bicep Curl,3,35,10,350,,,
+,35,Nicholas Scott,3/21/2023,Pull 1,79,Deadlift,1,155,10,1550,6,,
+,36,Nicholas Scott,3/21/2023,Pull 1,79,Deadlift,2,145,7,1015,7.5,76%,190
+,37,Nicholas Scott,3/21/2023,Pull 1,79,Deadlift,3,165,5,825,9,86%,190
+,38,Nicholas Scott,3/21/2023,Pull 1,79,Deadlift,4,170,4,680,9.5,91%,185
+,39,Nicholas Scott,3/21/2023,Pull 1,79,Deadlift,5,170,4,680,9.5,91%,185
+,40,Nicholas Scott,3/21/2023,Pull 1,79,Deadlift,6,170,3,510,10,96%,180
+,41,Nicholas Scott,3/21/2023,Pull 1,79,Deadlift,7,170,3,510,10,96%,180
+,42,Nicholas Scott,3/21/2023,Pull 1,79,Cable Reverse Fly,1,15,10,150,,,
+,43,Nicholas Scott,3/21/2023,Pull 1,79,Cable Reverse Fly,2,15,10,150,,,
+,44,Nicholas Scott,3/21/2023,Pull 1,79,Cable Reverse Fly,3,15,10,150,,,
+,45,Nicholas Scott,3/21/2023,Pull 1,79,Shrugs,1,75,10,750,,,
+,46,Nicholas Scott,3/21/2023,Pull 1,79,Shrugs,2,75,10,750,,,
+,47,Nicholas Scott,3/21/2023,Pull 1,79,Shrugs,3,75,10,750,,,
+,48,Nicholas Scott,3/21/2023,Pull 1,79,Lat Pull Down,1,80,10,800,,,
+,49,Nicholas Scott,3/21/2023,Pull 1,79,Lat Pull Down,2,80,10,800,,,
+,50,Nicholas Scott,3/21/2023,Pull 1,79,Lat Pull Down,3,80,10,800,,,
+,51,Nicholas Scott,3/21/2023,Pull 1,79,Incline Bicep Curl,1,30,10,300,,,
+,52,Nicholas Scott,3/21/2023,Pull 1,79,Incline Bicep Curl,2,30,10,300,,,
+,53,Nicholas Scott,3/21/2023,Pull 1,79,Incline Bicep Curl,3,30,10,300,,,
+,54,Nicholas Scott,3/21/2023,Pull 1,79,Facepull,1,72.5,10,725,,,
+,55,Nicholas Scott,3/21/2023,Pull 1,79,Facepull,2,72.5,10,725,,,
+,56,Nicholas Scott,3/21/2023,Pull 1,79,Facepull,3,72.5,10,725,,,
+,57,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Press,1,115,10,1150,,,
+,58,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Press,2,115,10,1150,,,
+,59,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Press,3,115,10,1150,,,
+,60,Nicholas Scott,3/22/2023,Legs 1,64,Squat,1,135,10,1350,6,,
+,61,Nicholas Scott,3/22/2023,Legs 1,64,Squat,2,225,7,1575,7.5,76%,295
+,62,Nicholas Scott,3/22/2023,Legs 1,64,Squat,3,275,5,1375,9,86%,320
+,63,Nicholas Scott,3/22/2023,Legs 1,64,Squat,4,280,4,1120,9.5,91%,310
+,64,Nicholas Scott,3/22/2023,Legs 1,64,Squat,5,280,4,1120,9.5,91%,310
+,65,Nicholas Scott,3/22/2023,Legs 1,64,Squat,6,280,3,840,10,96%,295
+,66,Nicholas Scott,3/22/2023,Legs 1,64,Squat,7,280,3,840,10,96%,295
+,67,Nicholas Scott,3/22/2023,Legs 1,64,Barbell Romanian Deadlift,1,155,10,1550,,,
+,68,Nicholas Scott,3/22/2023,Legs 1,64,Barbell Romanian Deadlift,2,155,10,1550,,,
+,69,Nicholas Scott,3/22/2023,Legs 1,64,Barbell Romanian Deadlift,3,155,10,1550,,,
+,70,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Quad Extension,1,90,10,900,,,
+,71,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Quad Extension,2,90,10,900,,,
+,72,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Quad Extension,3,90,10,900,,,
+,73,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Hamstring Curl,1,50,10,500,,,
+,74,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Hamstring Curl,2,50,10,500,,,
+,75,Nicholas Scott,3/22/2023,Legs 1,64,Single Leg Hamstring Curl,3,50,10,500,,,
+,76,Nicholas Scott,3/23/2023,Push 2,75,Cable Tricep Pulldown,1,72.5,10,725,,,
+,77,Nicholas Scott,3/23/2023,Push 2,75,Cable Tricep Pulldown,2,72.5,10,725,,,
+,78,Nicholas Scott,3/23/2023,Push 2,75,Cable Tricep Pulldown,3,72.5,10,725,,,
+,79,Nicholas Scott,3/23/2023,Push 2,75,DB Front Raise,1,45,10,450,,,
+,80,Nicholas Scott,3/23/2023,Push 2,75,DB Front Raise,2,45,10,450,,,
+,81,Nicholas Scott,3/23/2023,Push 2,75,DB Front Raise,3,45,10,450,,,
+,82,Nicholas Scott,3/23/2023,Push 2,75,Military Press,1,105,10,1050,6,,
+,83,Nicholas Scott,3/23/2023,Push 2,75,Military Press,2,125,5,625,9,86%,145
+,84,Nicholas Scott,3/23/2023,Push 2,75,Military Press,3,130,4,520,9.5,91%,145
+,85,Nicholas Scott,3/23/2023,Push 2,75,Military Press,4,130,4,520,9.5,91%,145
+,86,Nicholas Scott,3/23/2023,Push 2,75,Military Press,5,130,3,390,10,96%,135
+,87,Nicholas Scott,3/23/2023,Push 2,75,Military Press,6,130,3,390,10,96%,135
+,88,Nicholas Scott,3/23/2023,Push 2,75,Cable Fly,1,22.5,10,225,,,
+,89,Nicholas Scott,3/23/2023,Push 2,75,Arnold Press,2,22.5,10,225,,,
+,90,Nicholas Scott,3/23/2023,Push 2,75,Arnold Press,3,22.5,9,202.5,,,
+,91,Nicholas Scott,3/23/2023,Push 2,75,DB Lateral Raise,1,30,10,300,,,
+,92,Nicholas Scott,3/23/2023,Push 2,75,DB Lateral Raise,2,30,10,300,,,
+,93,Nicholas Scott,3/23/2023,Push 2,75,DB Lateral Raise,3,30,10,300,,,
+,94,Nicholas Scott,3/23/2023,Push 2,75,DB Overhead Press,1,70,10,700,,,
+,95,Nicholas Scott,3/23/2023,Push 2,75,DB Overhead Press,2,70,10,700,,,
+,96,Nicholas Scott,3/23/2023,Push 2,75,DB Overhead Press,3,70,10,700,,,
+,97,Nicholas Scott,3/23/2023,Push 2,75,Incline Bench Press,1,155,10,1550,,,
+,98,Nicholas Scott,3/23/2023,Push 2,75,Incline Bench Press,2,155,10,1550,,,
+,99,Nicholas Scott,3/23/2023,Push 2,75,Incline Bench Press,3,155,10,1550,,,
+,100,Nicholas Scott,3/23/2023,Push 2,75,Single Arm Cable Kickback,1,17.5,10,175,,,
+,101,Nicholas Scott,3/23/2023,Push 2,75,Single Arm Cable Kickback,2,17.5,10,175,,,
+,102,Nicholas Scott,3/23/2023,Push 2,75,Single Arm Cable Kickback,3,17.5,10,175,,,
+,103,Nicholas Scott,3/24/2023,Pull 2,80,Plate-weighted Row,1,320,10,3200,,,
+,104,Nicholas Scott,3/24/2023,Pull 2,80,Plate-weighted Row,2,320,10,3200,,,
+,105,Nicholas Scott,3/24/2023,Pull 2,80,Plate-weighted Row,3,320,10,3200,,,
+,106,Nicholas Scott,3/24/2023,Pull 2,80,DB Hammer Curl,1,40,10,400,,,
+,107,Nicholas Scott,3/24/2023,Pull 2,80,DB Hammer Curl,2,40,10,400,,,
+,108,Nicholas Scott,3/24/2023,Pull 2,80,DB Hammer Curl,3,40,10,400,,,
+,109,Nicholas Scott,3/24/2023,Pull 2,80,Barbell Row,1,135,10,1350,6,,
+,110,Nicholas Scott,3/24/2023,Pull 2,80,Barbell Row,2,155,5,775,9,86%,180
+,111,Nicholas Scott,3/24/2023,Pull 2,80,Barbell Row,3,160,4,640,9.5,91%,175
+,112,Nicholas Scott,3/24/2023,Pull 2,80,Barbell Row,4,160,4,640,9.5,91%,175
+,113,Nicholas Scott,3/24/2023,Pull 2,80,Barbell Row,5,160,4,640,9.5,91%,175
+,114,Nicholas Scott,3/24/2023,Pull 2,80,Barbell Row,6,160,3,480,10,96%,170
+,115,Nicholas Scott,3/24/2023,Pull 2,80,Cable Reverse Fly,1,15,10,150,,,
+,116,Nicholas Scott,3/24/2023,Pull 2,80,Cable Reverse Fly,2,15,10,150,,,
+,117,Nicholas Scott,3/24/2023,Pull 2,80,Cable Reverse Fly,3,15,10,150,,,
+,118,Nicholas Scott,3/24/2023,Pull 2,80,Shrugs,1,75,10,750,,,
+,119,Nicholas Scott,3/24/2023,Pull 2,80,Shrugs,2,75,10,750,,,
+,120,Nicholas Scott,3/24/2023,Pull 2,80,Shrugs,3,75,10,750,,,
+,121,Nicholas Scott,3/24/2023,Pull 2,80,Plate-Weighted Single Arm Lat Pulldown,1,140,10,1400,,,
+,122,Nicholas Scott,3/24/2023,Pull 2,80,Plate-Weighted Single Arm Lat Pulldown,2,140,10,1400,,,
+,123,Nicholas Scott,3/24/2023,Pull 2,80,Plate-Weighted Single Arm Lat Pulldown,3,140,10,1400,,,
+,124,Nicholas Scott,3/24/2023,Pull 2,80,Incline Hammer Curl,1,35,10,350,,,
+,125,Nicholas Scott,3/24/2023,Pull 2,80,Incline Hammer Curl,2,35,10,350,,,
+,126,Nicholas Scott,3/24/2023,Pull 2,80,Incline Hammer Curl,3,35,10,350,,,
+,127,Nicholas Scott,3/24/2023,Pull 2,80,Facepull,1,72.5,10,725,,,
+,128,Nicholas Scott,3/24/2023,Pull 2,80,Facepull,2,72.5,10,725,,,
+,129,Nicholas Scott,3/24/2023,Pull 2,80,Facepull,3,72.5,10,725,,,
+,130,Nicholas Scott,3/25/2023,Legs 2,68,Bulgarian Split Squat,1,90,10,900,,,
+,131,Nicholas Scott,3/25/2023,Legs 2,68,Bulgarian Split Squat,2,90,10,900,,,
+,132,Nicholas Scott,3/25/2023,Legs 2,68,Bulgarian Split Squat,3,90,10,900,,,
+,133,Nicholas Scott,3/25/2023,Legs 2,68,Front Squat,1,135,10,1350,6.5,#NUM!,
+,134,Nicholas Scott,3/25/2023,Legs 2,68,Front Squat,2,185,5,925,9,86%,215
+,135,Nicholas Scott,3/25/2023,Legs 2,68,Front Squat,3,190,4,760,9.5,91%,210
+,136,Nicholas Scott,3/25/2023,Legs 2,68,Front Squat,4,190,4,760,9.5,91%,210
+,137,Nicholas Scott,3/25/2023,Legs 2,68,Front Squat,5,190,4,760,9.5,91%,210
+,138,Nicholas Scott,3/25/2023,Legs 2,68,Front Squat,6,190,3,570,10,96%,200
+,139,Nicholas Scott,3/25/2023,Legs 2,68,Barbell Romanian Deadlift,1,155,10,1550,,,
+,140,Nicholas Scott,3/25/2023,Legs 2,68,Barbell Romanian Deadlift,2,155,10,1550,,,
+,141,Nicholas Scott,3/25/2023,Legs 2,68,Barbell Romanian Deadlift,3,155,10,1550,,,
+,142,Nicholas Scott,3/25/2023,Legs 2,68,Single Leg Quad Extension,1,90,10,900,,,
+,143,Nicholas Scott,3/25/2023,Legs 2,68,Single Leg Quad Extension,2,90,10,900,,,
+,144,Nicholas Scott,3/25/2023,Legs 2,68,Single Leg Quad Extension,3,90,10,900,,,
+,145,Nicholas Scott,3/25/2023,Legs 2,68,Single Leg Hamstring Curl,1,50,10,500,,,
+,146,Nicholas Scott,3/25/2023,Legs 2,68,Single Leg Hamstring Curl,2,50,10,500,,,
+,147,Nicholas Scott,3/25/2023,Legs 2,68,Single Leg Hamstring Curl,3,50,10,500,,,
+,148,Nicholas Scott,3/27/2023,Push 1,75,Tricep Pushdown,1,70,10,700,,,
+,149,Nicholas Scott,3/27/2023,Push 1,75,Tricep Pushdown,2,70,10,700,,,
+,150,Nicholas Scott,3/27/2023,Push 1,75,Tricep Pushdown,3,70,10,700,,,
+,151,Nicholas Scott,3/27/2023,Push 1,75,DB Front Raise,1,45,10,450,,,
+,152,Nicholas Scott,3/27/2023,Push 1,75,DB Front Raise,2,45,10,450,,,
+,153,Nicholas Scott,3/27/2023,Push 1,75,DB Front Raise,3,45,10,450,,,
+,154,Nicholas Scott,3/27/2023,Push 1,75,Bench Press,1,135,10,1350,6,,
+,155,Nicholas Scott,3/27/2023,Push 1,75,Bench Press,2,185,7,1295,7.5,76%,245
+,156,Nicholas Scott,3/27/2023,Push 1,75,Bench Press,3,230,5,1150,9,86%,265
+,157,Nicholas Scott,3/27/2023,Push 1,75,Bench Press,4,235,4,940,9.5,91%,260
+,158,Nicholas Scott,3/27/2023,Push 1,75,Bench Press,5,235,4,940,9.5,91%,260
+,159,Nicholas Scott,3/27/2023,Push 1,75,Bench Press,6,235,3,705,10,96%,245
+,160,Nicholas Scott,3/27/2023,Push 1,75,Bench Press,7,235,3,705,10,96%,245
+,161,Nicholas Scott,3/27/2023,Push 1,75,Arnold Press,1,50,10,500,,,
+,162,Nicholas Scott,3/27/2023,Push 1,75,Arnold Press,2,50,10,500,,,
+,163,Nicholas Scott,3/27/2023,Push 1,75,Arnold Press,3,50,9,450,,,
+,164,Nicholas Scott,3/27/2023,Push 1,75,DB Lateral Raise,1,35,10,350,,,
+,165,Nicholas Scott,3/27/2023,Push 1,75,DB Lateral Raise,2,35,10,350,,,
+,166,Nicholas Scott,3/27/2023,Push 1,75,DB Lateral Raise,3,35,10,350,,,
+,167,Nicholas Scott,3/27/2023,Push 1,75,Tricep EZ Bar Overhead Press,1,70,10,700,,,
+,168,Nicholas Scott,3/27/2023,Push 1,75,Tricep EZ Bar Overhead Press,2,70,10,700,,,
+,169,Nicholas Scott,3/27/2023,Push 1,75,Tricep EZ Bar Overhead Press,3,70,10,700,,,
+,170,Nicholas Scott,3/27/2023,Push 1,75,DB Fly,1,45,10,450,,,
+,171,Nicholas Scott,3/27/2023,Push 1,75,DB Fly,2,45,10,450,,,
+,172,Nicholas Scott,3/27/2023,Push 1,75,DB Fly,3,45,10,450,,,
+,173,Nicholas Scott,3/27/2023,Push 1,75,DB Incline Bench Press,1,80,10,800,,,
+,174,Nicholas Scott,3/27/2023,Push 1,75,DB Incline Bench Press,2,80,10,800,,,
+,175,Nicholas Scott,3/27/2023,Push 1,75,DB Incline Bench Press,3,80,10,800,,,
+,176,Nicholas Scott,3/28/2023,Pull 1,69,Cable Row,1,80,10,800,,,
+,177,Nicholas Scott,3/28/2023,Pull 1,69,Cable Row,2,80,10,800,,,
+,178,Nicholas Scott,3/28/2023,Pull 1,69,Cable Row,3,80,10,800,,,
+,179,Nicholas Scott,3/28/2023,Pull 1,69,Bicep Curl,1,35,10,350,,,
+,180,Nicholas Scott,3/28/2023,Pull 1,69,Bicep Curl,2,35,10,350,,,
+,181,Nicholas Scott,3/28/2023,Pull 1,69,Bicep Curl,3,35,10,350,,,
+,182,Nicholas Scott,3/28/2023,Pull 1,69,Deadlift,1,155,10,1550,6,,
+,183,Nicholas Scott,3/28/2023,Pull 1,69,Deadlift,2,145,7,1015,7.5,76%,190
+,184,Nicholas Scott,3/28/2023,Pull 1,69,Deadlift,3,170,5,850,9,86%,195
+,185,Nicholas Scott,3/28/2023,Pull 1,69,Deadlift,4,175,4,700,9.5,91%,195
+,186,Nicholas Scott,3/28/2023,Pull 1,69,Deadlift,5,175,4,700,9.5,91%,195
+,187,Nicholas Scott,3/28/2023,Pull 1,69,Deadlift,6,175,3,525,10,96%,185
+,188,Nicholas Scott,3/28/2023,Pull 1,69,Deadlift,7,175,3,525,10,96%,185
+,189,Nicholas Scott,3/28/2023,Pull 1,69,Cable Reverse Fly,1,15,10,150,,,
+,190,Nicholas Scott,3/28/2023,Pull 1,69,Cable Reverse Fly,2,15,10,150,,,
+,191,Nicholas Scott,3/28/2023,Pull 1,69,Cable Reverse Fly,3,15,10,150,,,
+,192,Nicholas Scott,3/28/2023,Pull 1,69,Shrugs,1,80,10,800,,,
+,193,Nicholas Scott,3/28/2023,Pull 1,69,Shrugs,2,80,10,800,,,
+,194,Nicholas Scott,3/28/2023,Pull 1,69,Shrugs,3,80,10,800,,,
+,195,Nicholas Scott,3/28/2023,Pull 1,69,Lat Pull Down,1,82.5,10,825,,,
+,196,Nicholas Scott,3/28/2023,Pull 1,69,Lat Pull Down,2,82.5,10,825,,,
+,197,Nicholas Scott,3/28/2023,Pull 1,69,Lat Pull Down,3,82.5,10,825,,,
+,198,Nicholas Scott,3/28/2023,Pull 1,69,Incline Bicep Curl,1,30,10,300,,,
+,199,Nicholas Scott,3/28/2023,Pull 1,69,Incline Bicep Curl,2,30,10,300,,,
+,200,Nicholas Scott,3/28/2023,Pull 1,69,Incline Bicep Curl,3,30,10,300,,,
+,201,Nicholas Scott,3/28/2023,Pull 1,69,Facepull,1,72.5,10,725,,,
+,202,Nicholas Scott,3/28/2023,Pull 1,69,Facepull,2,72.5,10,725,,,
+,203,Nicholas Scott,3/28/2023,Pull 1,69,Facepull,3,72.5,10,725,,,
+,204,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Press,1,120,10,1200,,,
+,205,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Press,2,120,10,1200,,,
+,206,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Press,3,120,10,1200,,,
+,207,Nicholas Scott,3/29/2023,Legs 1,71,Squat,1,135,10,1350,6,,
+,208,Nicholas Scott,3/29/2023,Legs 1,71,Squat,2,225,7,1575,7.5,76%,295
+,209,Nicholas Scott,3/29/2023,Legs 1,71,Squat,3,280,5,1400,9,86%,325
+,210,Nicholas Scott,3/29/2023,Legs 1,71,Squat,4,285,4,1140,9.5,91%,315
+,211,Nicholas Scott,3/29/2023,Legs 1,71,Squat,5,285,4,1140,9.5,91%,315
+,212,Nicholas Scott,3/29/2023,Legs 1,71,Squat,6,285,3,855,10,96%,300
+,213,Nicholas Scott,3/29/2023,Legs 1,71,Squat,7,285,3,855,10,96%,300
+,214,Nicholas Scott,3/29/2023,Legs 1,71,Barbell Romanian Deadlift,1,155,10,1550,,,
+,215,Nicholas Scott,3/29/2023,Legs 1,71,Barbell Romanian Deadlift,2,155,10,1550,,,
+,216,Nicholas Scott,3/29/2023,Legs 1,71,Barbell Romanian Deadlift,3,155,10,1550,,,
+,217,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Quad Extension,1,90,10,900,,,
+,218,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Quad Extension,2,90,10,900,,,
+,219,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Quad Extension,3,90,10,900,,,
+,220,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Hamstring Curl,1,50,10,500,,,
+,221,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Hamstring Curl,2,50,10,500,,,
+,222,Nicholas Scott,3/29/2023,Legs 1,71,Single Leg Hamstring Curl,3,50,10,500,,,
+,223,Nicholas Scott,3/30/2023,Push 2,76,Cable Tricep Pulldown,1,72.5,10,725,,,
+,224,Nicholas Scott,3/30/2023,Push 2,76,Cable Tricep Pulldown,2,72.5,10,725,,,
+,225,Nicholas Scott,3/30/2023,Push 2,76,Cable Tricep Pulldown,3,72.5,10,725,,,
+,226,Nicholas Scott,3/30/2023,Push 2,76,DB Front Raise,1,50,10,500,,,
+,227,Nicholas Scott,3/30/2023,Push 2,76,DB Front Raise,2,50,10,500,,,
+,228,Nicholas Scott,3/30/2023,Push 2,76,DB Front Raise,3,50,10,500,,,
+,229,Nicholas Scott,3/30/2023,Push 2,76,Military Press,1,105,10,1050,6,,
+,230,Nicholas Scott,3/30/2023,Push 2,76,Military Press,2,130,5,650,9,86%,150
+,231,Nicholas Scott,3/30/2023,Push 2,76,Military Press,3,135,4,540,9.5,91%,150
+,232,Nicholas Scott,3/30/2023,Push 2,76,Military Press,4,135,4,540,9.5,91%,150
+,233,Nicholas Scott,3/30/2023,Push 2,76,Military Press,5,135,3,405,10,96%,140
+,234,Nicholas Scott,3/30/2023,Push 2,76,Military Press,6,135,3,405,10,96%,140
+,235,Nicholas Scott,3/30/2023,Push 2,76,Cable Fly,1,22.5,10,225,,,
+,236,Nicholas Scott,3/30/2023,Push 2,76,Arnold Press,2,22.5,10,225,,,
+,237,Nicholas Scott,3/30/2023,Push 2,76,Arnold Press,3,22.5,9,202.5,,,
+,238,Nicholas Scott,3/30/2023,Push 2,76,DB Lateral Raise,1,35,10,350,,,
+,239,Nicholas Scott,3/30/2023,Push 2,76,DB Lateral Raise,2,35,10,350,,,
+,240,Nicholas Scott,3/30/2023,Push 2,76,DB Lateral Raise,3,35,10,350,,,
+,241,Nicholas Scott,3/30/2023,Push 2,76,DB Overhead Press,1,70,10,700,,,
+,242,Nicholas Scott,3/30/2023,Push 2,76,DB Overhead Press,2,70,10,700,,,
+,243,Nicholas Scott,3/30/2023,Push 2,76,DB Overhead Press,3,70,10,700,,,
+,244,Nicholas Scott,3/30/2023,Push 2,76,Incline Bench Press,1,155,10,1550,,,
+,245,Nicholas Scott,3/30/2023,Push 2,76,Incline Bench Press,2,155,10,1550,,,
+,246,Nicholas Scott,3/30/2023,Push 2,76,Incline Bench Press,3,155,10,1550,,,
+,247,Nicholas Scott,3/30/2023,Push 2,76,Single Arm Cable Kickback,1,17.5,10,175,,,
+,248,Nicholas Scott,3/30/2023,Push 2,76,Single Arm Cable Kickback,2,17.5,10,175,,,
+,249,Nicholas Scott,3/30/2023,Push 2,76,Single Arm Cable Kickback,3,17.5,10,175,,,
+,250,Nicholas Scott,3/31/2023,Pull 2,66,Plate-weighted Row,1,320,10,3200,,,
+,251,Nicholas Scott,3/31/2023,Pull 2,66,Plate-weighted Row,2,320,10,3200,,,
+,252,Nicholas Scott,3/31/2023,Pull 2,66,Plate-weighted Row,3,320,10,3200,,,
+,253,Nicholas Scott,3/31/2023,Pull 2,66,DB Hammer Curl,1,40,10,400,,,
+,254,Nicholas Scott,3/31/2023,Pull 2,66,DB Hammer Curl,2,40,10,400,,,
+,255,Nicholas Scott,3/31/2023,Pull 2,66,DB Hammer Curl,3,40,10,400,,,
+,256,Nicholas Scott,3/31/2023,Pull 2,66,Barbell Row,1,135,10,1350,6,,
+,257,Nicholas Scott,3/31/2023,Pull 2,66,Barbell Row,2,160,5,800,9,86%,185
+,258,Nicholas Scott,3/31/2023,Pull 2,66,Barbell Row,3,165,4,660,9.5,91%,180
+,259,Nicholas Scott,3/31/2023,Pull 2,66,Barbell Row,4,165,4,660,9.5,91%,180
+,260,Nicholas Scott,3/31/2023,Pull 2,66,Barbell Row,5,165,4,660,9.5,91%,180
+,261,Nicholas Scott,3/31/2023,Pull 2,66,Barbell Row,6,165,3,495,10,96%,175
+,262,Nicholas Scott,3/31/2023,Pull 2,66,Cable Reverse Fly,1,15,10,150,,,
+,263,Nicholas Scott,3/31/2023,Pull 2,66,Cable Reverse Fly,2,15,10,150,,,
+,264,Nicholas Scott,3/31/2023,Pull 2,66,Cable Reverse Fly,3,15,10,150,,,
+,265,Nicholas Scott,3/31/2023,Pull 2,66,Shrugs,1,80,10,800,,,
+,266,Nicholas Scott,3/31/2023,Pull 2,66,Shrugs,2,80,10,800,,,
+,267,Nicholas Scott,3/31/2023,Pull 2,66,Shrugs,3,80,10,800,,,
+,268,Nicholas Scott,3/31/2023,Pull 2,66,Plate-Weighted Single Arm Lat Pulldown,1,140,10,1400,,,
+,269,Nicholas Scott,3/31/2023,Pull 2,66,Plate-Weighted Single Arm Lat Pulldown,2,140,10,1400,,,
+,270,Nicholas Scott,3/31/2023,Pull 2,66,Plate-Weighted Single Arm Lat Pulldown,3,140,10,1400,,,
+,271,Nicholas Scott,3/31/2023,Pull 2,66,Incline Hammer Curl,1,35,10,350,,,
+,272,Nicholas Scott,3/31/2023,Pull 2,66,Incline Hammer Curl,2,35,10,350,,,
+,273,Nicholas Scott,3/31/2023,Pull 2,66,Incline Hammer Curl,3,35,10,350,,,
+,274,Nicholas Scott,3/31/2023,Pull 2,66,Facepull,1,72.5,10,725,,,
+,275,Nicholas Scott,3/31/2023,Pull 2,66,Facepull,2,72.5,10,725,,,
+,276,Nicholas Scott,3/31/2023,Pull 2,66,Facepull,3,72.5,10,725,,,
+,277,Nicholas Scott,4/1/2023,Legs 2,,Bulgarian Split Squat,1,100,10,1000,,,
+,278,Nicholas Scott,4/1/2023,Legs 2,,Bulgarian Split Squat,2,100,10,1000,,,
+,279,Nicholas Scott,4/1/2023,Legs 2,,Bulgarian Split Squat,3,100,10,1000,,,
+,280,Nicholas Scott,4/1/2023,Legs 2,,Front Squat,1,135,10,1350,6.5,#NUM!,
+,281,Nicholas Scott,4/1/2023,Legs 2,,Front Squat,2,190,5,950,9,86%,220
+,282,Nicholas Scott,4/1/2023,Legs 2,,Front Squat,3,195,4,780,9.5,91%,215
+,283,Nicholas Scott,4/1/2023,Legs 2,,Front Squat,4,195,4,780,9.5,91%,215
+,284,Nicholas Scott,4/1/2023,Legs 2,,Front Squat,5,195,4,780,9.5,91%,215
+,285,Nicholas Scott,4/1/2023,Legs 2,,Front Squat,6,195,3,585,10,96%,205
+,286,Nicholas Scott,4/1/2023,Legs 2,,Barbell Romanian Deadlift,1,155,10,1550,,,
+,287,Nicholas Scott,4/1/2023,Legs 2,,Barbell Romanian Deadlift,2,155,10,1550,,,
+,288,Nicholas Scott,4/1/2023,Legs 2,,Barbell Romanian Deadlift,3,155,10,1550,,,
+,289,Nicholas Scott,4/1/2023,Legs 2,,Single Leg Quad Extension,1,90,10,900,,,
+,290,Nicholas Scott,4/1/2023,Legs 2,,Single Leg Quad Extension,2,90,10,900,,,
+,291,Nicholas Scott,4/1/2023,Legs 2,,Single Leg Quad Extension,3,90,10,900,,,
+,292,Nicholas Scott,4/1/2023,Legs 2,,Single Leg Hamstring Curl,1,50,10,500,,,
+,293,Nicholas Scott,4/1/2023,Legs 2,,Single Leg Hamstring Curl,2,50,10,500,,,
+,294,Nicholas Scott,4/1/2023,Legs 2,,Single Leg Hamstring Curl,3,50,10,500,,,
+,295,Nicholas Scott,4/3/2023,Push 1,,Tricep Pushdown,1,70,10,700,,,
+,296,Nicholas Scott,4/3/2023,Push 1,,Tricep Pushdown,2,70,10,700,,,
+,297,Nicholas Scott,4/3/2023,Push 1,,Tricep Pushdown,3,70,10,700,,,
+,298,Nicholas Scott,4/3/2023,Push 1,,DB Front Raise,1,50,10,500,,,
+,299,Nicholas Scott,4/3/2023,Push 1,,DB Front Raise,2,50,10,500,,,
+,300,Nicholas Scott,4/3/2023,Push 1,,DB Front Raise,3,50,10,500,,,
+,301,Nicholas Scott,4/3/2023,Push 1,,Bench Press,1,135,10,1350,6,,
+,302,Nicholas Scott,4/3/2023,Push 1,,Bench Press,2,185,7,1295,7.5,76%,245
+,303,Nicholas Scott,4/3/2023,Push 1,,Bench Press,3,235,5,1175,9,86%,270
+,304,Nicholas Scott,4/3/2023,Push 1,,Bench Press,4,240,4,960,9.5,91%,265
+,305,Nicholas Scott,4/3/2023,Push 1,,Bench Press,5,240,4,960,9.5,91%,265
+,306,Nicholas Scott,4/3/2023,Push 1,,Bench Press,6,240,3,720,10,96%,250
+,307,Nicholas Scott,4/3/2023,Push 1,,Bench Press,7,240,3,720,10,96%,250
+,308,Nicholas Scott,4/3/2023,Push 1,,Arnold Press,1,50,10,500,,,
+,309,Nicholas Scott,4/3/2023,Push 1,,Arnold Press,2,50,10,500,,,
+,310,Nicholas Scott,4/3/2023,Push 1,,Arnold Press,3,50,9,450,,,
+,311,Nicholas Scott,4/3/2023,Push 1,,DB Lateral Raise,1,35,10,350,,,
+,312,Nicholas Scott,4/3/2023,Push 1,,DB Lateral Raise,2,35,10,350,,,
+,313,Nicholas Scott,4/3/2023,Push 1,,DB Lateral Raise,3,35,10,350,,,
+,314,Nicholas Scott,4/3/2023,Push 1,,Tricep EZ Bar Overhead Press,1,75,10,750,,,
+,315,Nicholas Scott,4/3/2023,Push 1,,Tricep EZ Bar Overhead Press,2,75,10,750,,,
+,316,Nicholas Scott,4/3/2023,Push 1,,Tricep EZ Bar Overhead Press,3,75,10,750,,,
+,317,Nicholas Scott,4/3/2023,Push 1,,DB Fly,1,50,10,500,,,
+,318,Nicholas Scott,4/3/2023,Push 1,,DB Fly,2,50,10,500,,,
+,319,Nicholas Scott,4/3/2023,Push 1,,DB Fly,3,50,10,500,,,
+,320,Nicholas Scott,4/3/2023,Push 1,,DB Incline Bench Press,1,80,10,800,,,
+,321,Nicholas Scott,4/3/2023,Push 1,,DB Incline Bench Press,2,80,10,800,,,
+,322,Nicholas Scott,4/3/2023,Push 1,,DB Incline Bench Press,3,80,10,800,,,
+,323,Nicholas Scott,4/4/2023,Pull 1,,Cable Row,1,82.5,10,825,,,
+,324,Nicholas Scott,4/4/2023,Pull 1,,Cable Row,2,82.5,10,825,,,
+,325,Nicholas Scott,4/4/2023,Pull 1,,Cable Row,3,82.5,10,825,,,
+,326,Nicholas Scott,4/4/2023,Pull 1,,Bicep Curl,1,40,10,400,,,
+,327,Nicholas Scott,4/4/2023,Pull 1,,Bicep Curl,2,40,10,400,,,
+,328,Nicholas Scott,4/4/2023,Pull 1,,Bicep Curl,3,40,10,400,,,
+,329,Nicholas Scott,4/4/2023,Pull 1,,Deadlift,1,155,10,1550,6,,
+,330,Nicholas Scott,4/4/2023,Pull 1,,Deadlift,2,205,7,1435,7.5,76%,270
+,331,Nicholas Scott,4/4/2023,Pull 1,,Deadlift,3,225,5,1125,9,86%,260
+,332,Nicholas Scott,4/4/2023,Pull 1,,Deadlift,4,230,4,920,9.5,91%,255
+,333,Nicholas Scott,4/4/2023,Pull 1,,Deadlift,5,230,4,920,9.5,91%,255
+,334,Nicholas Scott,4/4/2023,Pull 1,,Deadlift,6,230,3,690,10,96%,240
+,335,Nicholas Scott,4/4/2023,Pull 1,,Deadlift,7,230,3,690,10,96%,240
+,336,Nicholas Scott,4/4/2023,Pull 1,,Cable Reverse Fly,1,15,10,150,,,
+,337,Nicholas Scott,4/4/2023,Pull 1,,Cable Reverse Fly,2,15,10,150,,,
+,338,Nicholas Scott,4/4/2023,Pull 1,,Cable Reverse Fly,3,15,10,150,,,
+,339,Nicholas Scott,4/4/2023,Pull 1,,Shrugs,1,85,10,850,,,
+,340,Nicholas Scott,4/4/2023,Pull 1,,Shrugs,2,85,10,850,,,
+,341,Nicholas Scott,4/4/2023,Pull 1,,Shrugs,3,85,10,850,,,
+,342,Nicholas Scott,4/4/2023,Pull 1,,Lat Pull Down,1,82.5,10,825,,,
+,343,Nicholas Scott,4/4/2023,Pull 1,,Lat Pull Down,2,82.5,10,825,,,
+,344,Nicholas Scott,4/4/2023,Pull 1,,Lat Pull Down,3,82.5,10,825,,,
+,345,Nicholas Scott,4/4/2023,Pull 1,,Incline Bicep Curl,1,30,10,300,,,
+,346,Nicholas Scott,4/4/2023,Pull 1,,Incline Bicep Curl,2,30,10,300,,,
+,347,Nicholas Scott,4/4/2023,Pull 1,,Incline Bicep Curl,3,30,10,300,,,
+,348,Nicholas Scott,4/4/2023,Pull 1,,Facepull,1,72.5,10,725,,,
+,349,Nicholas Scott,4/4/2023,Pull 1,,Facepull,2,72.5,10,725,,,
+,350,Nicholas Scott,4/4/2023,Pull 1,,Facepull,3,72.5,10,725,,,
+,351,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Press,1,120,10,1200,,,
+,352,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Press,2,120,10,1200,,,
+,353,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Press,3,120,10,1200,,,
+,354,Nicholas Scott,4/5/2023,Legs 1,,Squat,1,135,10,1350,6,,
+,355,Nicholas Scott,4/5/2023,Legs 1,,Squat,2,225,7,1575,7.5,76%,295
+,356,Nicholas Scott,4/5/2023,Legs 1,,Squat,3,285,5,1425,9,86%,330
+,357,Nicholas Scott,4/5/2023,Legs 1,,Squat,4,290,4,1160,9.5,91%,320
+,358,Nicholas Scott,4/5/2023,Legs 1,,Squat,5,290,4,1160,9.5,91%,320
+,359,Nicholas Scott,4/5/2023,Legs 1,,Squat,6,290,3,870,10,96%,305
+,360,Nicholas Scott,4/5/2023,Legs 1,,Squat,7,290,3,870,10,96%,305
+,361,Nicholas Scott,4/5/2023,Legs 1,,Barbell Romanian Deadlift,1,155,10,1550,,,
+,362,Nicholas Scott,4/5/2023,Legs 1,,Barbell Romanian Deadlift,2,155,10,1550,,,
+,363,Nicholas Scott,4/5/2023,Legs 1,,Barbell Romanian Deadlift,3,155,10,1550,,,
+,364,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Quad Extension,1,95,10,950,,,
+,365,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Quad Extension,2,95,10,950,,,
+,366,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Quad Extension,3,95,10,950,,,
+,367,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Hamstring Curl,1,55,10,550,,,
+,368,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Hamstring Curl,2,55,10,550,,,
+,369,Nicholas Scott,4/5/2023,Legs 1,,Single Leg Hamstring Curl,3,55,10,550,,,
+,370,Nicholas Scott,4/6/2023,Push 2,,Cable Tricep Pulldown,1,72.5,10,725,,,
+,371,Nicholas Scott,4/6/2023,Push 2,,Cable Tricep Pulldown,2,72.5,10,725,,,
+,372,Nicholas Scott,4/6/2023,Push 2,,Cable Tricep Pulldown,3,72.5,10,725,,,
+,373,Nicholas Scott,4/6/2023,Push 2,,DB Front Raise,1,45,10,450,,,
+,374,Nicholas Scott,4/6/2023,Push 2,,DB Front Raise,2,45,10,450,,,
+,375,Nicholas Scott,4/6/2023,Push 2,,DB Front Raise,3,45,10,450,,,
+,376,Nicholas Scott,4/6/2023,Push 2,,Military Press,1,105,10,1050,6,,
+,377,Nicholas Scott,4/6/2023,Push 2,,Military Press,2,130,5,650,9,86%,150
+,378,Nicholas Scott,4/6/2023,Push 2,,Military Press,3,135,4,540,9.5,91%,150
+,379,Nicholas Scott,4/6/2023,Push 2,,Military Press,4,135,4,540,9.5,91%,150
+,380,Nicholas Scott,4/6/2023,Push 2,,Military Press,5,135,3,405,10,96%,140
+,381,Nicholas Scott,4/6/2023,Push 2,,Military Press,6,135,3,405,10,96%,140
+,382,Nicholas Scott,4/6/2023,Push 2,,Cable Fly,1,22.5,10,225,,,
+,383,Nicholas Scott,4/6/2023,Push 2,,Arnold Press,2,22.5,10,225,,,
+,384,Nicholas Scott,4/6/2023,Push 2,,Arnold Press,3,22.5,9,202.5,,,
+,385,Nicholas Scott,4/6/2023,Push 2,,DB Lateral Raise,1,35,10,350,,,
+,386,Nicholas Scott,4/6/2023,Push 2,,DB Lateral Raise,2,35,10,350,,,
+,387,Nicholas Scott,4/6/2023,Push 2,,DB Lateral Raise,3,35,10,350,,,
+,388,Nicholas Scott,4/6/2023,Push 2,,DB Overhead Press,1,70,10,700,,,
+,389,Nicholas Scott,4/6/2023,Push 2,,DB Overhead Press,2,70,10,700,,,
+,390,Nicholas Scott,4/6/2023,Push 2,,DB Overhead Press,3,70,10,700,,,
+,391,Nicholas Scott,4/6/2023,Push 2,,Incline Bench Press,1,155,10,1550,,,
+,392,Nicholas Scott,4/6/2023,Push 2,,Incline Bench Press,2,155,10,1550,,,
+,393,Nicholas Scott,4/6/2023,Push 2,,Incline Bench Press,3,155,10,1550,,,
+,394,Nicholas Scott,4/6/2023,Push 2,,Single Arm Cable Kickback,1,17.5,10,175,,,
+,395,Nicholas Scott,4/6/2023,Push 2,,Single Arm Cable Kickback,2,17.5,10,175,,,
+,396,Nicholas Scott,4/6/2023,Push 2,,Single Arm Cable Kickback,3,17.5,10,175,,,
+,397,Nicholas Scott,4/7/2023,Pull 2,,Plate-weighted Row,1,320,10,3200,,,
+,398,Nicholas Scott,4/7/2023,Pull 2,,Plate-weighted Row,2,320,10,3200,,,
+,399,Nicholas Scott,4/7/2023,Pull 2,,Plate-weighted Row,3,320,10,3200,,,
+,400,Nicholas Scott,4/7/2023,Pull 2,,DB Hammer Curl,1,40,10,400,,,
+,401,Nicholas Scott,4/7/2023,Pull 2,,DB Hammer Curl,2,40,10,400,,,
+,402,Nicholas Scott,4/7/2023,Pull 2,,DB Hammer Curl,3,40,10,400,,,
+,403,Nicholas Scott,4/7/2023,Pull 2,,Barbell Row,1,135,10,1350,6,,
+,404,Nicholas Scott,4/7/2023,Pull 2,,Barbell Row,2,165,5,825,9,86%,190
+,405,Nicholas Scott,4/7/2023,Pull 2,,Barbell Row,3,170,4,680,9.5,91%,185
+,406,Nicholas Scott,4/7/2023,Pull 2,,Barbell Row,4,170,4,680,9.5,91%,185
+,407,Nicholas Scott,4/7/2023,Pull 2,,Barbell Row,5,170,4,680,9.5,91%,185
+,408,Nicholas Scott,4/7/2023,Pull 2,,Barbell Row,6,170,3,510,10,96%,180
+,409,Nicholas Scott,4/7/2023,Pull 2,,Cable Reverse Fly,1,15,10,150,,,
+,410,Nicholas Scott,4/7/2023,Pull 2,,Cable Reverse Fly,2,15,10,150,,,
+,411,Nicholas Scott,4/7/2023,Pull 2,,Cable Reverse Fly,3,15,10,150,,,
+,412,Nicholas Scott,4/7/2023,Pull 2,,Shrugs,1,85,10,850,,,
+,413,Nicholas Scott,4/7/2023,Pull 2,,Shrugs,2,85,10,850,,,
+,414,Nicholas Scott,4/7/2023,Pull 2,,Shrugs,3,85,10,850,,,
+,415,Nicholas Scott,4/7/2023,Pull 2,,Plate-Weighted Single Arm Lat Pulldown,1,140,10,1400,,,
+,416,Nicholas Scott,4/7/2023,Pull 2,,Plate-Weighted Single Arm Lat Pulldown,2,140,10,1400,,,
+,417,Nicholas Scott,4/7/2023,Pull 2,,Plate-Weighted Single Arm Lat Pulldown,3,140,10,1400,,,
+,418,Nicholas Scott,4/7/2023,Pull 2,,Incline Hammer Curl,1,35,10,350,,,
+,419,Nicholas Scott,4/7/2023,Pull 2,,Incline Hammer Curl,2,35,10,350,,,
+,420,Nicholas Scott,4/7/2023,Pull 2,,Incline Hammer Curl,3,35,10,350,,,
+,421,Nicholas Scott,4/7/2023,Pull 2,,Facepull,1,77.5,10,775,,,
+,422,Nicholas Scott,4/7/2023,Pull 2,,Facepull,2,77.5,10,775,,,
+,423,Nicholas Scott,4/7/2023,Pull 2,,Facepull,3,77.5,10,775,,,
+,424,Nicholas Scott,4/8/2023,Legs 2,,Bulgarian Split Squat,1,100,10,1000,,,
+,425,Nicholas Scott,4/8/2023,Legs 2,,Bulgarian Split Squat,2,100,10,1000,,,
+,426,Nicholas Scott,4/8/2023,Legs 2,,Bulgarian Split Squat,3,100,10,1000,,,
+,427,Nicholas Scott,4/8/2023,Legs 2,,Front Squat,1,135,10,1350,6.5,#NUM!,
+,428,Nicholas Scott,4/8/2023,Legs 2,,Front Squat,2,195,5,975,9,86%,225
+,429,Nicholas Scott,4/8/2023,Legs 2,,Front Squat,3,200,4,800,9.5,91%,220
+,430,Nicholas Scott,4/8/2023,Legs 2,,Front Squat,4,200,4,800,9.5,91%,220
+,431,Nicholas Scott,4/8/2023,Legs 2,,Front Squat,5,200,4,800,9.5,91%,220
+,432,Nicholas Scott,4/8/2023,Legs 2,,Front Squat,6,200,3,600,10,96%,210
+,433,Nicholas Scott,4/8/2023,Legs 2,,Barbell Romanian Deadlift,1,155,10,1550,,,
+,434,Nicholas Scott,4/8/2023,Legs 2,,Barbell Romanian Deadlift,2,155,10,1550,,,
+,435,Nicholas Scott,4/8/2023,Legs 2,,Barbell Romanian Deadlift,3,155,10,1550,,,
+,436,Nicholas Scott,4/8/2023,Legs 2,,Single Leg Quad Extension,1,95,10,950,,,
+,437,Nicholas Scott,4/8/2023,Legs 2,,Single Leg Quad Extension,2,95,10,950,,,
+,438,Nicholas Scott,4/8/2023,Legs 2,,Single Leg Quad Extension,3,95,10,950,,,
+,439,Nicholas Scott,4/8/2023,Legs 2,,Single Leg Hamstring Curl,1,55,10,550,,,
+,440,Nicholas Scott,4/8/2023,Legs 2,,Single Leg Hamstring Curl,2,55,10,550,,,
+,441,Nicholas Scott,4/8/2023,Legs 2,,Single Leg Hamstring Curl,3,55,10,550,,,
+,442,Nicholas Scott,4/9/2023,,,,,,,0,,,
+,443,Nicholas Scott,4/10/2023,Push 1,,Tricep Pushdown,1,70,10,700,,,
+,444,Nicholas Scott,4/10/2023,Push 1,,Tricep Pushdown,2,70,10,700,,,
+,445,Nicholas Scott,4/10/2023,Push 1,,Tricep Pushdown,3,70,10,700,,,
+,446,Nicholas Scott,4/10/2023,Push 1,,DB Front Raise,1,50,10,500,,,
+,447,Nicholas Scott,4/10/2023,Push 1,,DB Front Raise,2,50,10,500,,,
+,448,Nicholas Scott,4/10/2023,Push 1,,DB Front Raise,3,50,10,500,,,
+,449,Nicholas Scott,4/10/2023,Push 1,,Bench Press,1,135,10,1350,6,,
+,450,Nicholas Scott,4/10/2023,Push 1,,Bench Press,2,185,7,1295,7.5,76%,245
+,451,Nicholas Scott,4/10/2023,Push 1,,Bench Press,3,235,4,940,9,88%,270
+,452,Nicholas Scott,4/10/2023,Push 1,,Bench Press,4,235,4,940,9.5,91%,260
+,453,Nicholas Scott,4/10/2023,Push 1,,Bench Press,5,235,4,940,9.5,91%,260
+,454,Nicholas Scott,4/10/2023,Push 1,,Bench Press,6,235,3,705,10,96%,245
+,455,Nicholas Scott,4/10/2023,Push 1,,Bench Press,7,235,3,705,10,96%,245
+,456,Nicholas Scott,4/10/2023,Push 1,,Arnold Press,1,50,10,500,,,
+,457,Nicholas Scott,4/10/2023,Push 1,,Arnold Press,2,50,10,500,,,
+,458,Nicholas Scott,4/10/2023,Push 1,,Arnold Press,3,50,9,450,,,
+,459,Nicholas Scott,4/10/2023,Push 1,,DB Lateral Raise,1,35,10,350,,,
+,460,Nicholas Scott,4/10/2023,Push 1,,DB Lateral Raise,2,35,10,350,,,
+,461,Nicholas Scott,4/10/2023,Push 1,,DB Lateral Raise,3,35,10,350,,,
+,462,Nicholas Scott,4/10/2023,Push 1,,Tricep EZ Bar Overhead Press,1,75,10,750,,,
+,463,Nicholas Scott,4/10/2023,Push 1,,Tricep EZ Bar Overhead Press,2,75,10,750,,,
+,464,Nicholas Scott,4/10/2023,Push 1,,Tricep EZ Bar Overhead Press,3,75,10,750,,,
+,465,Nicholas Scott,4/10/2023,Push 1,,DB Fly,1,50,10,500,,,
+,466,Nicholas Scott,4/10/2023,Push 1,,DB Fly,2,50,10,500,,,
+,467,Nicholas Scott,4/10/2023,Push 1,,DB Fly,3,50,10,500,,,
+,468,Nicholas Scott,4/10/2023,Push 1,,DB Incline Bench Press,1,80,10,800,,,
+,469,Nicholas Scott,4/10/2023,Push 1,,DB Incline Bench Press,2,80,10,800,,,
+,470,Nicholas Scott,4/10/2023,Push 1,,DB Incline Bench Press,3,80,10,800,,,
+,471,Nicholas Scott,4/11/2023,Pull 1,,Cable Row,1,82.5,10,825,,,
+,472,Nicholas Scott,4/11/2023,Pull 1,,Cable Row,2,82.5,10,825,,,
+,473,Nicholas Scott,4/11/2023,Pull 1,,Cable Row,3,82.5,10,825,,,
+,474,Nicholas Scott,4/11/2023,Pull 1,,Bicep Curl,1,35,10,350,,,
+,475,Nicholas Scott,4/11/2023,Pull 1,,Bicep Curl,2,35,10,350,,,
+,476,Nicholas Scott,4/11/2023,Pull 1,,Bicep Curl,3,35,10,350,,,
+,477,Nicholas Scott,4/11/2023,Pull 1,,Deadlift,1,155,10,1550,6,,
+,478,Nicholas Scott,4/11/2023,Pull 1,,Deadlift,2,205,7,1435,7.5,76%,270
+,479,Nicholas Scott,4/11/2023,Pull 1,,Deadlift,3,235,5,1175,9,86%,270
+,480,Nicholas Scott,4/11/2023,Pull 1,,Deadlift,4,240,4,960,9.5,91%,265
+,481,Nicholas Scott,4/11/2023,Pull 1,,Deadlift,5,240,4,960,9.5,91%,265
+,482,Nicholas Scott,4/11/2023,Pull 1,,Deadlift,6,240,3,720,10,96%,250
+,483,Nicholas Scott,4/11/2023,Pull 1,,Deadlift,7,240,3,720,10,96%,250
+,484,Nicholas Scott,4/11/2023,Pull 1,,Cable Reverse Fly,1,15,10,150,,,
+,485,Nicholas Scott,4/11/2023,Pull 1,,Cable Reverse Fly,2,15,10,150,,,
+,486,Nicholas Scott,4/11/2023,Pull 1,,Cable Reverse Fly,3,15,10,150,,,
+,487,Nicholas Scott,4/11/2023,Pull 1,,Shrugs,1,85,10,850,,,
+,488,Nicholas Scott,4/11/2023,Pull 1,,Shrugs,2,85,10,850,,,
+,489,Nicholas Scott,4/11/2023,Pull 1,,Shrugs,3,85,10,850,,,
+,490,Nicholas Scott,4/11/2023,Pull 1,,Lat Pull Down,1,82.5,10,825,,,
+,491,Nicholas Scott,4/11/2023,Pull 1,,Lat Pull Down,2,82.5,10,825,,,
+,492,Nicholas Scott,4/11/2023,Pull 1,,Lat Pull Down,3,82.5,10,825,,,
+,493,Nicholas Scott,4/11/2023,Pull 1,,Incline Bicep Curl,1,30,10,300,,,
+,494,Nicholas Scott,4/11/2023,Pull 1,,Incline Bicep Curl,2,30,10,300,,,
+,495,Nicholas Scott,4/11/2023,Pull 1,,Incline Bicep Curl,3,30,10,300,,,
+,496,Nicholas Scott,4/11/2023,Pull 1,,Facepull,1,77.5,10,775,,,
+,497,Nicholas Scott,4/11/2023,Pull 1,,Facepull,2,77.5,10,775,,,
+,498,Nicholas Scott,4/11/2023,Pull 1,,Facepull,3,77.5,10,775,,,
+,499,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Press,1,125,10,1250,,,
+,500,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Press,2,125,10,1250,,,
+,501,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Press,3,125,10,1250,,,
+,502,Nicholas Scott,4/12/2023,Legs 1,,Squat,1,135,10,1350,6,,
+,503,Nicholas Scott,4/12/2023,Legs 1,,Squat,2,225,7,1575,7.5,76%,295
+,504,Nicholas Scott,4/12/2023,Legs 1,,Squat,3,285,5,1425,9,86%,330
+,505,Nicholas Scott,4/12/2023,Legs 1,,Squat,4,290,4,1160,9.5,91%,320
+,506,Nicholas Scott,4/12/2023,Legs 1,,Squat,5,290,4,1160,9.5,91%,320
+,507,Nicholas Scott,4/12/2023,Legs 1,,Squat,6,290,3,870,10,96%,305
+,508,Nicholas Scott,4/12/2023,Legs 1,,Squat,7,290,3,870,10,96%,305
+,509,Nicholas Scott,4/12/2023,Legs 1,,Barbell Romanian Deadlift,1,155,10,1550,,,
+,510,Nicholas Scott,4/12/2023,Legs 1,,Barbell Romanian Deadlift,2,155,10,1550,,,
+,511,Nicholas Scott,4/12/2023,Legs 1,,Barbell Romanian Deadlift,3,155,10,1550,,,
+,512,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Quad Extension,1,95,10,950,,,
+,513,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Quad Extension,2,95,10,950,,,
+,514,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Quad Extension,3,95,10,950,,,
+,515,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Hamstring Curl,1,55,10,550,,,
+,516,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Hamstring Curl,2,55,10,550,,,
+,517,Nicholas Scott,4/12/2023,Legs 1,,Single Leg Hamstring Curl,3,55,10,550,,,
+,518,Nicholas Scott,4/13/2023,Push 2,,Cable Tricep Pulldown,1,72.5,10,725,,,
+,519,Nicholas Scott,4/13/2023,Push 2,,Cable Tricep Pulldown,2,72.5,10,725,,,
+,520,Nicholas Scott,4/13/2023,Push 2,,Cable Tricep Pulldown,3,72.5,10,725,,,
+,521,Nicholas Scott,4/13/2023,Push 2,,DB Front Raise,1,50,10,500,,,
+,522,Nicholas Scott,4/13/2023,Push 2,,DB Front Raise,2,50,10,500,,,
+,523,Nicholas Scott,4/13/2023,Push 2,,DB Front Raise,3,50,10,500,,,
+,524,Nicholas Scott,4/13/2023,Push 2,,Military Press,1,105,10,1050,6,,
+,525,Nicholas Scott,4/13/2023,Push 2,,Military Press,2,135,5,675,9,86%,155
+,526,Nicholas Scott,4/13/2023,Push 2,,Military Press,3,140,4,560,9.5,91%,155
+,527,Nicholas Scott,4/13/2023,Push 2,,Military Press,4,140,4,560,9.5,91%,155
+,528,Nicholas Scott,4/13/2023,Push 2,,Military Press,5,140,3,420,10,96%,145
+,529,Nicholas Scott,4/13/2023,Push 2,,Military Press,6,140,3,420,10,96%,145
+,530,Nicholas Scott,4/13/2023,Push 2,,Cable Fly,1,22.5,10,225,,,
+,531,Nicholas Scott,4/13/2023,Push 2,,Arnold Press,2,22.5,10,225,,,
+,532,Nicholas Scott,4/13/2023,Push 2,,Arnold Press,3,22.5,9,202.5,,,
+,533,Nicholas Scott,4/13/2023,Push 2,,DB Lateral Raise,1,35,10,350,,,
+,534,Nicholas Scott,4/13/2023,Push 2,,DB Lateral Raise,2,35,10,350,,,
+,535,Nicholas Scott,4/13/2023,Push 2,,DB Lateral Raise,3,35,10,350,,,
+,536,Nicholas Scott,4/13/2023,Push 2,,DB Overhead Press,1,70,10,700,,,
+,537,Nicholas Scott,4/13/2023,Push 2,,DB Overhead Press,2,70,10,700,,,
+,538,Nicholas Scott,4/13/2023,Push 2,,DB Overhead Press,3,70,10,700,,,
+,539,Nicholas Scott,4/13/2023,Push 2,,Incline Bench Press,1,155,10,1550,,,
+,540,Nicholas Scott,4/13/2023,Push 2,,Incline Bench Press,2,155,10,1550,,,
+,541,Nicholas Scott,4/13/2023,Push 2,,Incline Bench Press,3,155,10,1550,,,
+,542,Nicholas Scott,4/13/2023,Push 2,,Single Arm Cable Kickback,1,17.5,10,175,,,
+,543,Nicholas Scott,4/13/2023,Push 2,,Single Arm Cable Kickback,2,17.5,10,175,,,
+,544,Nicholas Scott,4/13/2023,Push 2,,Single Arm Cable Kickback,3,17.5,10,175,,,
+,545,Nicholas Scott,4/14/2023,Pull 2,,Plate-weighted Row,1,320,10,3200,,,
+,546,Nicholas Scott,4/14/2023,Pull 2,,Plate-weighted Row,2,320,10,3200,,,
+,547,Nicholas Scott,4/14/2023,Pull 2,,Plate-weighted Row,3,320,10,3200,,,
+,548,Nicholas Scott,4/14/2023,Pull 2,,DB Hammer Curl,1,40,10,400,,,
+,549,Nicholas Scott,4/14/2023,Pull 2,,DB Hammer Curl,2,40,10,400,,,
+,550,Nicholas Scott,4/14/2023,Pull 2,,DB Hammer Curl,3,40,10,400,,,
+,551,Nicholas Scott,4/14/2023,Pull 2,,Barbell Row,1,135,10,1350,6,,
+,552,Nicholas Scott,4/14/2023,Pull 2,,Barbell Row,2,165,5,825,9,86%,190
+,553,Nicholas Scott,4/14/2023,Pull 2,,Barbell Row,3,170,4,680,9.5,91%,185
+,554,Nicholas Scott,4/14/2023,Pull 2,,Barbell Row,4,170,4,680,9.5,91%,185
+,555,Nicholas Scott,4/14/2023,Pull 2,,Barbell Row,5,170,4,680,9.5,91%,185
+,556,Nicholas Scott,4/14/2023,Pull 2,,Barbell Row,6,170,3,510,10,96%,180
+,557,Nicholas Scott,4/14/2023,Pull 2,,Cable Reverse Fly,1,15,10,150,,,
+,558,Nicholas Scott,4/14/2023,Pull 2,,Cable Reverse Fly,2,15,10,150,,,
+,559,Nicholas Scott,4/14/2023,Pull 2,,Cable Reverse Fly,3,15,10,150,,,
+,560,Nicholas Scott,4/14/2023,Pull 2,,Shrugs,1,85,10,850,,,
+,561,Nicholas Scott,4/14/2023,Pull 2,,Shrugs,2,85,10,850,,,
+,562,Nicholas Scott,4/14/2023,Pull 2,,Shrugs,3,85,10,850,,,
+,563,Nicholas Scott,4/14/2023,Pull 2,,Plate-Weighted Single Arm Lat Pulldown,1,140,10,1400,,,
+,564,Nicholas Scott,4/14/2023,Pull 2,,Plate-Weighted Single Arm Lat Pulldown,2,140,10,1400,,,
+,565,Nicholas Scott,4/14/2023,Pull 2,,Plate-Weighted Single Arm Lat Pulldown,3,140,10,1400,,,
+,566,Nicholas Scott,4/14/2023,Pull 2,,Incline Hammer Curl,1,35,10,350,,,
+,567,Nicholas Scott,4/14/2023,Pull 2,,Incline Hammer Curl,2,35,10,350,,,
+,568,Nicholas Scott,4/14/2023,Pull 2,,Incline Hammer Curl,3,35,10,350,,,
+,569,Nicholas Scott,4/14/2023,Pull 2,,Facepull,1,77.5,10,775,,,
+,570,Nicholas Scott,4/14/2023,Pull 2,,Facepull,2,77.5,10,775,,,
+,571,Nicholas Scott,4/14/2023,Pull 2,,Facepull,3,77.5,10,775,,,
+,572,Nicholas Scott,4/15/2023,Legs 2,,Bulgarian Split Squat,1,100,10,1000,,,
+,573,Nicholas Scott,4/15/2023,Legs 2,,Bulgarian Split Squat,2,100,10,1000,,,
+,574,Nicholas Scott,4/15/2023,Legs 2,,Bulgarian Split Squat,3,100,10,1000,,,
+,575,Nicholas Scott,4/15/2023,Legs 2,,Front Squat,1,135,10,1350,6.5,#NUM!,
+,576,Nicholas Scott,4/15/2023,Legs 2,,Front Squat,2,195,5,975,9,86%,225
+,577,Nicholas Scott,4/15/2023,Legs 2,,Front Squat,3,200,4,800,9.5,91%,220
+,578,Nicholas Scott,4/15/2023,Legs 2,,Front Squat,4,200,4,800,9.5,91%,220
+,579,Nicholas Scott,4/15/2023,Legs 2,,Front Squat,5,200,4,800,9.5,91%,220
+,580,Nicholas Scott,4/15/2023,Legs 2,,Front Squat,6,200,3,600,10,96%,210
+,581,Nicholas Scott,4/15/2023,Legs 2,,Barbell Romanian Deadlift,1,155,10,1550,,,
+,582,Nicholas Scott,4/15/2023,Legs 2,,Barbell Romanian Deadlift,2,155,10,1550,,,
+,583,Nicholas Scott,4/15/2023,Legs 2,,Barbell Romanian Deadlift,3,155,10,1550,,,
+,584,Nicholas Scott,4/15/2023,Legs 2,,Single Leg Quad Extension,1,95,10,950,,,
+,585,Nicholas Scott,4/15/2023,Legs 2,,Single Leg Quad Extension,2,95,10,950,,,
+,586,Nicholas Scott,4/15/2023,Legs 2,,Single Leg Quad Extension,3,95,10,950,,,
+,587,Nicholas Scott,4/15/2023,Legs 2,,Single Leg Hamstring Curl,1,55,10,550,,,
+,588,Nicholas Scott,4/15/2023,Legs 2,,Single Leg Hamstring Curl,2,55,10,550,,,
+,589,Nicholas Scott,4/15/2023,Legs 2,,Single Leg Hamstring Curl,3,55,10,550,,,
