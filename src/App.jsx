@@ -1,43 +1,34 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { db } from '../firebase';
+import { getDatabase, ref, query, orderByChild, get, child } from "firebase/database";
+
 
 const App = () => {
   const [count, setCount] = useState(0);
+  
 
+  const databaseRef = ref(db, 'users');
+  const dbUsers = query(databaseRef);
+  console.log(dbUsers);
+//   onValue(starCountRef, (snapshot) => {
+//   const data = snapshot.val();
+//   updateStarCount(postElement, data);
+// });
+  const dbRef = ref(db);
+  get(child(dbRef, `users/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount(count => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test hot module replacement (HMR).
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <h1>hi</h1>
     </div>
   );
 };
