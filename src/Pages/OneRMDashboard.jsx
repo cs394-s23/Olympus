@@ -71,8 +71,8 @@ function OneRMDashboard() {
         <div>
             <button onClick={()=>navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
             <br></br>
-            <br></br>
-            <h2>Select your exercise here:</h2>
+            <h2>This is your progress for your estimated 1 rep maxes</h2>
+            <h3>Select your exercise here:</h3>
             <br></br>
             <ToggleButtonGroup
                 color="primary"

@@ -70,7 +70,9 @@ function WorkoutVolumeDashboard() {
     return(
         <div>
             <button onClick={()=> navigate("/")}>Go to One Rep Max Dashboard</button>
-            <h2>Select your exercise here:</h2>
+            <br></br>
+            <h2>This is your progress for your workout volume</h2>
+            <h3>Select your exercise here:</h3>
             <br></br>
             <ToggleButtonGroup
                 color="primary"
