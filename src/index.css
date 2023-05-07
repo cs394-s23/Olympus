@@ -15,4 +15,10 @@ code {
 .graph {
   display: flex;
   justify-content: center;
+  align-content: center;
+  /* align-items: center; */
+}
+
+.recharts-wrapper {
+  margin : 0 auto;
 }

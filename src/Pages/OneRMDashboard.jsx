@@ -52,7 +52,7 @@ function OneRMDashboard() {
             }
             else {
             let point = new Object();
-            point.pv = item;
+            point.weight = item;
             dataPoints.push(point);
             }
         })
@@ -62,7 +62,6 @@ function OneRMDashboard() {
         if(newAlignment === null){
             null;
         } else{
-            console.log(newAlignment);
             setAlignment(newAlignment);
             filterForExercise(newAlignment);
         }
@@ -85,12 +84,13 @@ function OneRMDashboard() {
                 <ToggleButton value="Military Press">Military Press</ToggleButton>
                 <ToggleButton value="Barbell Row">Barbell Row</ToggleButton>
                 <ToggleButton value="Front Squat">Front Squat</ToggleButton>
-                <ToggleButton value="Military Press">Military Press</ToggleButton>
             </ToggleButtonGroup>
             {Object.keys(exerciseInfo).length > 0 ? 
             <div>
                 <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
-                <CreateGraph points={pointsToGraph} id="graph"/>
+                <div id="graph">
+                    <CreateGraph points={pointsToGraph} />
+                </div>
             </div>
             : null} 
         </div>
