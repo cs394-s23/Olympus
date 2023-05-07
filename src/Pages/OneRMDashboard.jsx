@@ -1,10 +1,15 @@
 import data from "../../data.json";
 import { useState , useEffect} from "react";
+import React from 'react';
 import CreateGraph from "../Utils/CreateGraph";
+
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 function OneRMDashboard() {
     const [exerciseInfo, setExerciseInfo] = useState([]);
     const [pointsToGraph, setPointsToGraph] = useState([]);
+    const [alignment, setAlignment] = useState('');
     const oneRMSArray = [];
     const dataPoints = [];
 
@@ -24,15 +29,13 @@ function OneRMDashboard() {
         }
     });
 
-    function filterForExercise() {
-        const name = document.getElementById("exercise-name").value;
+    function filterForExercise(name) {
         Object.filter = (obj, predicate) =>
             Object.keys(obj)
                 .filter(key => predicate(obj[key]))
                 .reduce((res, key) => (res[key] = obj[key], res), {});
 
         var filtered = Object.filter(exercises, ex => ex === name);
-        console.log(filtered);
         setExerciseInfo(filtered);
 
         Object.keys(filtered).forEach(key => {
@@ -55,17 +58,40 @@ function OneRMDashboard() {
         })
         setPointsToGraph(dataPoints);
     }
+    const handleChange = (event, newAlignment) => {
+        if(newAlignment === null){
+            null;
+        } else{
+            console.log(newAlignment);
+            setAlignment(newAlignment);
+            filterForExercise(newAlignment);
+        }
+      };
 
     return (
         <div>
-            <h2>Enter your exercise name here (case sensitive):</h2>
-            <input type="text" name="exercise name" id="exercise-name" placeholder="Ex. Bench Press, Squat, etc" /> <br></br><br></br>
-            <button id="button" onClick={() => filterForExercise()}>Go</button>
+            <h2>Select your exercise here:</h2>
             <br></br>
+            <ToggleButtonGroup
+                color="primary"
+                value={alignment}
+                exclusive
+                onChange={handleChange}
+                aria-label="Platform"
+                >
+                <ToggleButton value="Bench Press">Bench Press</ToggleButton>
+                <ToggleButton value="Squat">Squat</ToggleButton>
+                <ToggleButton value="Deadlift">Deadlift</ToggleButton>
+                <ToggleButton value="Military Press">Military Press</ToggleButton>
+                <ToggleButton value="Barbell Row">Barbell Row</ToggleButton>
+                <ToggleButton value="Front Squat">Front Squat</ToggleButton>
+                <ToggleButton value="Military Press">Military Press</ToggleButton>
+                <ToggleButton value="Front Squat">Front Squat</ToggleButton>
+            </ToggleButtonGroup>
             {Object.keys(exerciseInfo).length > 0 ? 
             <div>
-                <h3>This is your estimated 1 rep max progress for {document.getElementById("exercise-name").value}: </h3>
-                <CreateGraph points={pointsToGraph} />
+                <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
+                <CreateGraph points={pointsToGraph} id="graph"/>
             </div>
             : null} 
         </div>
