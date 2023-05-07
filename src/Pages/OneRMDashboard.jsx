@@ -86,7 +86,6 @@ function OneRMDashboard() {
                 <ToggleButton value="Barbell Row">Barbell Row</ToggleButton>
                 <ToggleButton value="Front Squat">Front Squat</ToggleButton>
                 <ToggleButton value="Military Press">Military Press</ToggleButton>
-                <ToggleButton value="Front Squat">Front Squat</ToggleButton>
             </ToggleButtonGroup>
             {Object.keys(exerciseInfo).length > 0 ? 
             <div>
