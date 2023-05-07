@@ -5,7 +5,7 @@ import CreateGraph from "../Utils/CreateGraph";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-function OneRMDashboard() {
+function WorkoutVolumeDashboard() {
     let navigate = useNavigate();
     const [exerciseInfo, setExerciseInfo] = useState([]);
     const [pointsToGraph, setPointsToGraph] = useState([]);
@@ -22,10 +22,10 @@ function OneRMDashboard() {
     });
 
     //Get all estimated 1 rep maxes (for all exercises)
-    var estimated1rm;
+    var workoutVolume;
     Object.entries(data).forEach(item => {
-        if (item[0] === "E 1RM") {
-            estimated1rm = item[1];
+        if (item[0] === "Volume") {
+            workoutVolume = item[1];
         }
     });
 
@@ -39,7 +39,7 @@ function OneRMDashboard() {
         setExerciseInfo(filtered);
 
         Object.keys(filtered).forEach(key => {
-            oneRMSArray.push(estimated1rm[key]);
+            oneRMSArray.push(workoutVolume[key]);
         })
 
         getDataPoints();
@@ -67,11 +67,9 @@ function OneRMDashboard() {
         }
       };
 
-    return (
+    return(
         <div>
-            <button onClick={()=>navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
-            <br></br>
-            <br></br>
+            <button onClick={()=> navigate("/")}>Go to One Rep Max Dashboard</button>
             <h2>Select your exercise here:</h2>
             <br></br>
             <ToggleButtonGroup
@@ -90,14 +88,13 @@ function OneRMDashboard() {
             </ToggleButtonGroup>
             {Object.keys(exerciseInfo).length > 0 ? 
             <div>
-                <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
+                <h3>This is your estimated workout volume progress for {alignment}: </h3>
                 <div id="graph">
                     <CreateGraph points={pointsToGraph} />
                 </div>
             </div>
-            : null} 
+            : null}
         </div>
     );
 }
-
-export default OneRMDashboard;
+export default WorkoutVolumeDashboard

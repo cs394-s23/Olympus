@@ -3,9 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import { db } from '../firebase';
 import { getDatabase, ref, query, orderByChild, get, child } from "firebase/database";
-import  {Example} from './exampleChart.jsx';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Router, BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './Utils/Layout';
 import OneRMDashboard from './Pages/OneRMDashboard';
+import WorkoutVolumeDashboard from './Pages/WorkoutVolumeDashboard';
 
 
 const App = () => {
@@ -23,7 +24,16 @@ const App = () => {
   });
   return (
     <div className="App">
-      <OneRMDashboard />
+      {/* <OneRMDashboard /> */}
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+            <Route index element={<OneRMDashboard />}/>
+            <Route path="/WorkoutVolumeDashboard" element={<WorkoutVolumeDashboard />} >
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
