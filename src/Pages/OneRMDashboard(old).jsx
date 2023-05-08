@@ -1,41 +1,84 @@
 import data from "../../data.json";
-import data_1RM from "../../data_1RM.json";
 import { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-function OneRMDashboard() {
+function OneRMDashboard_old() {
     let navigate = useNavigate();
+    const [exerciseInfo, setExerciseInfo] = useState([]);
+    const [datesInfo, setDatesInfo] = useState([]); 
     const [pointsToGraph, setPointsToGraph] = useState([]);
     const [alignment, setAlignment] = useState('');
+    const oneRMSArray = [];
+    const datesArray = [];
+    const dataPoints = [];
 
+    // Get all exercises
+    var exercises;
+    Object.entries(data).forEach(item => {
+        if (item[0] === "Exercise Name") {
+            exercises = item[1];
+        }
+    });
+
+    //Get all estimated 1 rep maxes (for all exercises)
+    var estimated1rm;
+    Object.entries(data).forEach(item => {
+        if (item[0] === "E 1RM") {
+            estimated1rm = item[1];
+        }
+    });
+
+    //Get all dates
+    var dates;
+    Object.entries(data).forEach(item => {
+        if (item[0] === "Date") {
+            dates = item[1];
+        }
+    });
+    // console.log(dates);
+
+    function filterForExercise(name) {
+        Object.filter = (obj, predicate) =>
+            Object.keys(obj)
+                .filter(key => predicate(obj[key]))
+                .reduce((res, key) => (res[key] = obj[key], res), {});
+
+        var filtered = Object.filter(exercises, ex => ex === name);
+        setExerciseInfo(filtered);
+        // console.log(filtered);
+
+        Object.keys(filtered).forEach(key => {
+            oneRMSArray.push(estimated1rm[key]);
+            datesArray.push(dates[key]);
+        })
+
+        // console.log(oneRMSArray);
+    
+        getDataPoints();
+    }
+
+    function getDataPoints() {
+        oneRMSArray.forEach(item => {
+            if(item === null){
+                null;
+            }
+            else {
+            let point = new Object();
+            point.weight = item;
+            dataPoints.push(point);
+            }
+        })
+        setPointsToGraph(dataPoints);
+    }
     const handleChange = (event, newAlignment) => {
         if(newAlignment === null){
             null;
         } else{
             setAlignment(newAlignment);
-            let newDataPoints = [];
-            data_1RM[newAlignment].forEach(item => {
-                if(item !== null && item["E 1RM"] !== ""){
-                    let point = new Object();
-                    point.weight = parseInt(item["E 1RM"], 10);
-                    point.date = item["Date"];
-                    newDataPoints.push(point);
-                }
-            })
-            let maxDataPoints = [];
-            newDataPoints.forEach(item => {
-                if(maxDataPoints.length === 0){
-                    maxDataPoints.push(item);
-                } else if(maxDataPoints[maxDataPoints.length - 1].date !== item.date){
-                    maxDataPoints.push(item);
-                } else if (maxDataPoints[maxDataPoints.length - 1].weight < item.weight){
-                    maxDataPoints[maxDataPoints.length - 1] = item;
-                }
-            })
-            setPointsToGraph(maxDataPoints);
+            filterForExercise(newAlignment);
         }
       };
 
@@ -60,14 +103,16 @@ function OneRMDashboard() {
                 <ToggleButton value="Barbell Row">Barbell Row</ToggleButton>
                 <ToggleButton value="Front Squat">Front Squat</ToggleButton>
             </ToggleButtonGroup>
+            {Object.keys(exerciseInfo).length > 0 ? 
             <div>
                 <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
                 <div id="graph">
                     <CreateGraph points={pointsToGraph} />
                 </div>
             </div>
+            : null} 
         </div>
     );
 }
 
-export default OneRMDashboard;
+export default OneRMDashboard_old;

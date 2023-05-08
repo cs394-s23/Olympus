@@ -1,4 +1,4 @@
-import data from "../../data.json";
+import data_volume from "../../data_volume.json";
 import { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
@@ -7,63 +7,34 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 function WorkoutVolumeDashboard() {
     let navigate = useNavigate();
-    const [exerciseInfo, setExerciseInfo] = useState([]);
     const [pointsToGraph, setPointsToGraph] = useState([]);
     const [alignment, setAlignment] = useState('');
-    const oneRMSArray = [];
-    const dataPoints = [];
 
-    // Get all exercises
-    var exercises;
-    Object.entries(data).forEach(item => {
-        if (item[0] === "Exercise Name") {
-            exercises = item[1];
-        }
-    });
-
-    //Get all estimated 1 rep maxes (for all exercises)
-    var workoutVolume;
-    Object.entries(data).forEach(item => {
-        if (item[0] === "Volume") {
-            workoutVolume = item[1];
-        }
-    });
-
-    function filterForExercise(name) {
-        Object.filter = (obj, predicate) =>
-            Object.keys(obj)
-                .filter(key => predicate(obj[key]))
-                .reduce((res, key) => (res[key] = obj[key], res), {});
-
-        var filtered = Object.filter(exercises, ex => ex === name);
-        setExerciseInfo(filtered);
-
-        Object.keys(filtered).forEach(key => {
-            oneRMSArray.push(workoutVolume[key]);
-        })
-
-        getDataPoints();
-    }
-
-    function getDataPoints() {
-        oneRMSArray.forEach(item => {
-            if(item === null){
-                null;
-            }
-            else {
-            let point = new Object();
-            point.weight = item;
-            dataPoints.push(point);
-            }
-        })
-        setPointsToGraph(dataPoints);
-    }
     const handleChange = (event, newAlignment) => {
         if(newAlignment === null){
             null;
         } else{
             setAlignment(newAlignment);
-            filterForExercise(newAlignment);
+            let newDataPoints = [];
+            data_volume[newAlignment].forEach(item => {
+                if(item !== null && item["Volume"] !== ""){
+                    let point = new Object();
+                    point.weight = parseInt(item["Volume"], 10);
+                    point.date = item["Date"];
+                    newDataPoints.push(point);
+                }
+            })
+            let maxDataPoints = [];
+            newDataPoints.forEach(item => {
+                if(maxDataPoints.length === 0){
+                    maxDataPoints.push(item);
+                } else if(maxDataPoints[maxDataPoints.length - 1].date !== item.date){
+                    maxDataPoints.push(item);
+                } else {
+                    maxDataPoints[maxDataPoints.length - 1].weight += item.weight;
+                }
+            })
+            setPointsToGraph(maxDataPoints);
         }
       };
 
@@ -81,21 +52,19 @@ function WorkoutVolumeDashboard() {
                 onChange={handleChange}
                 aria-label="Platform"
                 >
-                <ToggleButton value="Bench Press">Bench Press</ToggleButton>
-                <ToggleButton value="Squat">Squat</ToggleButton>
-                <ToggleButton value="Deadlift">Deadlift</ToggleButton>
-                <ToggleButton value="Military Press">Military Press</ToggleButton>
-                <ToggleButton value="Barbell Row">Barbell Row</ToggleButton>
-                <ToggleButton value="Front Squat">Front Squat</ToggleButton>
+                <ToggleButton value="Push 1">Push 1</ToggleButton>
+                <ToggleButton value="Pull 1">Pull 1</ToggleButton>
+                <ToggleButton value="Legs 1">Legs 1</ToggleButton>
+                <ToggleButton value="Push 2">Push 2</ToggleButton>
+                <ToggleButton value="Pull 2">Pull 2</ToggleButton>
+                <ToggleButton value="Legs 2">Legs 2</ToggleButton>
             </ToggleButtonGroup>
-            {Object.keys(exerciseInfo).length > 0 ? 
             <div>
                 <h3>This is your estimated workout volume progress for {alignment}: </h3>
                 <div id="graph">
                     <CreateGraph points={pointsToGraph} />
                 </div>
             </div>
-            : null}
         </div>
     );
 }
