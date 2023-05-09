@@ -20,15 +20,18 @@ function OneRMDashboard() {
             data_1RM[newAlignment].forEach(item => {
                 if(item !== null && item["E 1RM"] !== ""){
                     let point = new Object();
-                    point.weight = parseInt(item["E 1RM"], 10);
+                    point.e1rm = parseInt(item["E 1RM"], 10);
+                    point.weight = parseInt(item["Weight"], 10);
                     point.date = item["Date"];
                     newDataPoints.push(point);
                 }
             })
             let maxDataPoints = [];
+            let counter = 0;
             newDataPoints.forEach(item => {
                 if(maxDataPoints.length === 0){
                     maxDataPoints.push(item);
+                    counter++;
                 } else if(maxDataPoints[maxDataPoints.length - 1].date !== item.date){
                     maxDataPoints.push(item);
                 } else if (maxDataPoints[maxDataPoints.length - 1].weight < item.weight){
@@ -41,7 +44,7 @@ function OneRMDashboard() {
 
     return (
         <div>
-            <button onClick={()=>navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
+            <button id="switch-dashboard" onClick={()=>navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
             <br></br>
             <h2>This is your progress for your estimated 1 rep maxes</h2>
             <h3>Select your exercise here:</h3>

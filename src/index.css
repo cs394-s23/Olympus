@@ -15,3 +15,9 @@ code {
 .recharts-wrapper {
   margin : 0 auto;
 }
+
+#switch-dashboard {
+  background-color: #121212;
+  color:#fff;
+  border-radius:10px;
+}

@@ -7,6 +7,8 @@ import { Router, BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './Utils/Layout';
 import OneRMDashboard from './Pages/OneRMDashboard';
 import WorkoutVolumeDashboard from './Pages/WorkoutVolumeDashboard';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 
 const App = () => {
@@ -22,18 +24,27 @@ const App = () => {
   }).catch((error) => {
     console.error(error);
   });
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+
   return (
     <div className="App">
-      {/* <OneRMDashboard /> */}
-      <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Layout />}>
-            <Route index element={<OneRMDashboard />}/>
-            <Route path="/WorkoutVolumeDashboard" element={<WorkoutVolumeDashboard />} >
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<Layout />}>
+              <Route index element={<OneRMDashboard />}/>
+              <Route path="/WorkoutVolumeDashboard" element={<WorkoutVolumeDashboard />} >
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
   );
 };

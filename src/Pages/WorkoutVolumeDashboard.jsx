@@ -38,21 +38,22 @@ function WorkoutVolumeDashboard() {
         }
       };
 
+
     return(
         <div>
-            <button onClick={()=> navigate("/")}>Go to One Rep Max Dashboard</button>
+            <button id="switch-dashboard" onClick={()=> navigate("/")}>Go to One Rep Max Dashboard</button>
             <br></br>
             <h2>This is your progress for your workout volume</h2>
             <h3>Select your exercise here:</h3>
             <br></br>
-            <ToggleButtonGroup
-                color="primary"
+            <ToggleButtonGroup 
+                color="secondary"
                 value={alignment}
                 exclusive
                 onChange={handleChange}
                 aria-label="Platform"
                 >
-                <ToggleButton value="Push 1">Push 1</ToggleButton>
+                <ToggleButton value="Push 1" >Push 1</ToggleButton>
                 <ToggleButton value="Pull 1">Pull 1</ToggleButton>
                 <ToggleButton value="Legs 1">Legs 1</ToggleButton>
                 <ToggleButton value="Push 2">Push 2</ToggleButton>
