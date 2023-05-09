@@ -22,16 +22,15 @@ function OneRMDashboard() {
                     let point = new Object();
                     point.e1rm = parseInt(item["E 1RM"], 10);
                     point.weight = parseInt(item["Weight"], 10);
+                    point.reps = parseInt(item["Reps"], 10);
                     point.date = item["Date"];
                     newDataPoints.push(point);
                 }
             })
             let maxDataPoints = [];
-            let counter = 0;
             newDataPoints.forEach(item => {
                 if(maxDataPoints.length === 0){
                     maxDataPoints.push(item);
-                    counter++;
                 } else if(maxDataPoints[maxDataPoints.length - 1].date !== item.date){
                     maxDataPoints.push(item);
                 } else if (maxDataPoints[maxDataPoints.length - 1].e1rm < item.e1rm){
