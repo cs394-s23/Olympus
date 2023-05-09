@@ -34,7 +34,7 @@ function OneRMDashboard() {
                     counter++;
                 } else if(maxDataPoints[maxDataPoints.length - 1].date !== item.date){
                     maxDataPoints.push(item);
-                } else if (maxDataPoints[maxDataPoints.length - 1].weight < item.weight){
+                } else if (maxDataPoints[maxDataPoints.length - 1].e1rm < item.e1rm){
                     maxDataPoints[maxDataPoints.length - 1] = item;
                 }
             })
