@@ -1,15 +1,52 @@
-import data from "../../data.json";
 import data_1RM from "../../data_1RM.json";
 import { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import { set } from "firebase/database";
+import Button from '@mui/material/Button';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function OneRMDashboard() {
     let navigate = useNavigate();
     const [pointsToGraph, setPointsToGraph] = useState([]);
-    const [alignment, setAlignment] = useState('');
+
+    const options = [
+        'Bench Press',
+        'Squat',
+        'Deadlift',
+        'Military Press',
+        'Barbell Row',
+        'Front Squat'
+      ];
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [alignment, setAlignment] = useState(options[selectedIndex]);
+    const open = Boolean(anchorEl);
+
+    useEffect(() => {
+        setAlignment(options[selectedIndex]);
+    }, [selectedIndex]);
+
+    useEffect(() => {
+        handleChange(null, alignment);
+    }, [alignment]);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuItemClick = (event, index) => {
+        setSelectedIndex(index);
+        setAnchorEl(null);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+  
 
     const handleChange = (event, newAlignment) => {
         if(newAlignment === null){
@@ -48,20 +85,40 @@ function OneRMDashboard() {
             <h2>This is your progress for your estimated 1 rep maxes</h2>
             <h3>Select your exercise here:</h3>
             <br></br>
-            <ToggleButtonGroup
-                color="primary"
-                value={alignment}
-                exclusive
-                onChange={handleChange}
-                aria-label="Platform"
-                >
-                <ToggleButton value="Bench Press">Bench Press</ToggleButton>
-                <ToggleButton value="Squat">Squat</ToggleButton>
-                <ToggleButton value="Deadlift">Deadlift</ToggleButton>
-                <ToggleButton value="Military Press">Military Press</ToggleButton>
-                <ToggleButton value="Barbell Row">Barbell Row</ToggleButton>
-                <ToggleButton value="Front Squat">Front Squat</ToggleButton>
-            </ToggleButtonGroup>
+            <div>
+            <Button
+            id="demo-customized-button"
+                aria-controls={open ? 'demo-customized-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                variant="outlined"
+                disableElevation
+                onClick={handleClick}
+                endIcon={<KeyboardArrowDownIcon />}
+            >
+                {options[selectedIndex]}
+            </Button>
+                    <Menu
+                        id="lock-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                        'aria-labelledby': 'lock-button',
+                        role: 'listbox',
+                        }}
+                    >
+                        {options.map((option, index) => (
+                        <MenuItem
+                            key={option}
+                            selected={index === selectedIndex}
+                            onClick={(event) => handleMenuItemClick(event, index)}
+                        >
+                            {option}
+                        </MenuItem>
+                        ))}
+                    </Menu>
+            </div>
             <div>
                 <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
                 <div id="graph">

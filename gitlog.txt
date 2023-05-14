@@ -1,0 +1,132 @@
+commit 696a888d32c4be1e6b757cbbcbcf4d21645ea9aa
+Author: cindyhu2023 <cindyhu2023@u.northwestern.edu>
+Date:   Sun May 7 21:48:15 2023 -0500
+
+    refactor data + add date to the graph
+
+A	csv_to_json.py
+A	data_1RM.json
+A	data_volume.json
+A	src/Pages/OneRMDashboard(old).jsx
+M	src/Pages/OneRMDashboard.jsx
+A	src/Pages/WorkoutVolumeDashboard(old).jsx
+M	src/Pages/WorkoutVolumeDashboard.jsx
+M	src/Utils/CreateGraph.jsx
+
+commit 8594e8e2f10dd93264285a5965429c91188a87d9
+Author: Julio Villanueva <75510178+julio-villa@users.noreply.github.com>
+Date:   Sun May 7 09:30:11 2023 -0500
+
+    added routing, new dashboard for workout volume
+
+M	src/Pages/OneRMDashboard.jsx
+M	src/Pages/WorkoutVolumeDashboard.jsx
+
+commit fa7ce0aa7811037c69d1f6da8264c41a841c6a7c
+Author: Julio Villanueva <75510178+julio-villa@users.noreply.github.com>
+Date:   Sun May 7 09:26:53 2023 -0500
+
+    added routing, new dashboard for workout volume
+
+M	data.json
+M	package-lock.json
+M	package.json
+M	src/App.jsx
+M	src/Pages/OneRMDashboard.jsx
+A	src/Pages/WorkoutVolumeDashboard.jsx
+A	src/Utils/Layout.jsx
+M	src/index.css
+
+commit ab4495e6a5746d7d1c6a44a1815953f4ce047cf8
+Author: Julio Villanueva <75510178+julio-villa@users.noreply.github.com>
+Date:   Sat May 6 21:02:57 2023 -0500
+
+    remove repeats, format graph
+
+M	src/Pages/OneRMDashboard.jsx
+M	src/Utils/CreateGraph.jsx
+M	src/index.css
+
+commit 1863dd8db3508028fdce11cb9fc46a4b730105b3
+Author: Julio Villanueva <75510178+julio-villa@users.noreply.github.com>
+Date:   Sat May 6 20:54:54 2023 -0500
+
+    remove repeated front squat
+
+M	src/Pages/OneRMDashboard.jsx
+
+commit ad6219a89e14763a3e9c32ac69ed4c2b25d5dff0
+Author: Julio Villanueva <75510178+julio-villa@users.noreply.github.com>
+Date:   Sat May 6 20:53:22 2023 -0500
+
+    toggling between exercises
+
+M	package-lock.json
+M	package.json
+M	src/Pages/OneRMDashboard.jsx
+M	src/index.css
+
+commit a67304f477a59a9a83500647a471dded0f86d515
+Author: Julio Villanueva <75510178+julio-villa@users.noreply.github.com>
+Date:   Fri May 5 22:19:21 2023 -0500
+
+    Graphing 1 rep maxes sorta working
+
+M	src/App.jsx
+A	src/Pages/OneRMDashboard.jsx
+A	src/Utils/CreateGraph.jsx
+
+commit 56e2e8702aec0cb241b3dd49b2a7a0679a5f093b
+Author: cindyhu2023 <cindyhu2023@u.northwestern.edu>
+Date:   Fri May 5 11:34:24 2023 -0500
+
+    add example chart and import data.json
+
+A	data.csv
+A	data.json
+M	package-lock.json
+M	package.json
+M	src/App.jsx
+A	src/exampleChart.jsx
+
+commit 797feaef97ed836393f825f8ce7b63c1ea68c84a
+Author: ThomasFilipiuk <ThomasFilipiuk2024@u.northwestern.edu>
+Date:   Fri May 5 10:49:38 2023 -0500
+
+    firebase setup
+
+A	.firebaserc
+A	database.rules.json
+A	dist/assets/index-7bce8228.css
+A	dist/assets/index-f874073c.js
+A	dist/assets/logo-ecc203fb.svg
+A	dist/favicon.svg
+A	dist/index.html
+A	dist/robots.txt
+A	firebase.json
+A	firebase.jsx
+M	package-lock.json
+M	package.json
+M	src/App.jsx
+
+commit fbb3570b876faaf97c18f9dae537b8a4ec8ddbdb
+Author: ThomasFilipiuk <ThomasFilipiuk2024@u.northwestern.edu>
+Date:   Mon May 1 10:13:54 2023 -0500
+
+    First commit
+
+A	.gitignore
+A	LICENSE
+A	README.md
+A	index.html
+A	package-lock.json
+A	package.json
+A	public/favicon.svg
+A	public/robots.txt
+A	src/App.css
+A	src/App.jsx
+A	src/App.test.jsx
+A	src/index.css
+A	src/index.jsx
+A	src/logo.svg
+A	vite.config.js
