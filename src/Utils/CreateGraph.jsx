@@ -2,6 +2,7 @@ import { ComposedChart, AreaChart, LineChart, Line, XAxis, YAxis, CartesianGrid,
 import GraphTooltip from './GraphTooltip';
 
 function CreateGraph({ points }) {
+
   return (
     <ComposedChart
       width={800}
@@ -24,7 +25,7 @@ function CreateGraph({ points }) {
           <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
         </linearGradient>
       </defs>
-      <XAxis dataKey="date"/>
+      <XAxis dataKey="date_string"/>
       <YAxis domain={[dataMin => ((dataMin * 0.9).toFixed(2)), dataMax => ((dataMax * 1.1).toFixed(2))]} />
       <CartesianGrid strokeDasharray="3 3" />
       <Tooltip content={<GraphTooltip />} wrapperStyle={{backgroundColor:"transparent", fontWeight:"bold"}}/>

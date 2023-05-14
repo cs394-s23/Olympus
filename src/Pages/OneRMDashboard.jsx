@@ -10,10 +10,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import new_data_1RM from "../../new_data_1RM.json";
 
 function OneRMDashboard({athlete_name}) {
-    let data = new_data_1RM[athlete_name];
     let navigate = useNavigate();
     const [pointsToGraph, setPointsToGraph] = useState([]);
-    const [dataPoints, setDataPoints] = useState([]);
 
     const options = [
         'Bench Press',
@@ -70,25 +68,32 @@ function OneRMDashboard({athlete_name}) {
             setAlignment(newAlignment);
             let newDataPoints = [];
             data[newAlignment].forEach(item => {
-                if(item !== null && item["E 1RM"] !== "" && item["Weight"] === "#VALUE!"){
+                if(item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!"){
                     let point = new Object();
                     point.e1rm = parseFloat(item["E 1RM"]);
                     point.weight = parseFloat(item["Weight"]);
                     point.reps = parseInt(item["Reps"], 10);
-                    point.date = item["Date"];
+                    const [month, day, year] = item["Date"].split('/');
+                    point.date = new Date(`${year}-${month}-${day}`);
+                    point.date_string = item["Date"];
                     newDataPoints.push(point);
                 }
             })
+            newDataPoints.sort((a, b) => a.date - b.date)
+            
             let maxDataPoints = [];
             newDataPoints.forEach(item => {
                 if(maxDataPoints.length === 0){
                     maxDataPoints.push(item);
-                } else if(maxDataPoints[maxDataPoints.length - 1].date !== item.date){
+                } else if(maxDataPoints[maxDataPoints.length - 1].date_string !== item.date_string){
                     maxDataPoints.push(item);
                 } else if (maxDataPoints[maxDataPoints.length - 1].e1rm < item.e1rm){
                     maxDataPoints[maxDataPoints.length - 1] = item;
                 }
             })
+
+            // console.log(newDataPoints)
+            ;
             setPointsToGraph(maxDataPoints);
         }
       };
