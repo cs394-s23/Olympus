@@ -8,17 +8,7 @@ import { set } from "firebase/database";
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import new_data_1RM from "../../new_data_1RM.json";
-
-function parseDate(dateString){
-    let [month, day, year] = dateString.split('/');
-    if (month.length === 1){
-        month = "0" + month;
-    }
-    if (day.length === 1){
-        day = "0" + day;
-    }
-    return new Date(`${year}-${month}-${day}`);
-}
+import parseDate from "../Utils/ParseDate.js";
 
 function OneRMDashboard({athlete_name}) {
     let navigate = useNavigate();
@@ -100,11 +90,7 @@ function OneRMDashboard({athlete_name}) {
                     maxDataPoints[maxDataPoints.length - 1] = item;
                 }
             })
-
-            // console.log(newDataPoints)
             maxDataPoints.sort((a, b) => a.date - b.date)
-            console.log(maxDataPoints)
-            
             setPointsToGraph(maxDataPoints);
         }
       };

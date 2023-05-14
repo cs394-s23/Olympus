@@ -9,7 +9,7 @@ import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import new_data_volume from "../../new_data_volume.json";
-
+import parseDate from "../Utils/ParseDate.js";
 
 function WorkoutVolumeDashboard({athlete_name}) {
     const options = [
@@ -65,7 +65,8 @@ function WorkoutVolumeDashboard({athlete_name}) {
                 if(item !== null && item["Volume"] !== "" && item["Volume"] !== "#VALUE!"){
                     let point = new Object();
                     point.weight = parseFloat(item["Volume"]);
-                    point.date = item["Date"];
+                    point.date = parseDate(item["Date"]);
+                    point.date_string = item["Date"];
                     newDataPoints.push(point);
                 }
             })
@@ -73,12 +74,14 @@ function WorkoutVolumeDashboard({athlete_name}) {
             newDataPoints.forEach(item => {
                 if(maxDataPoints.length === 0){
                     maxDataPoints.push(item);
-                } else if(maxDataPoints[maxDataPoints.length - 1].date !== item.date){
+                } else if(maxDataPoints[maxDataPoints.length - 1].date_string !== item.date_string){
                     maxDataPoints.push(item);
                 } else {
                     maxDataPoints[maxDataPoints.length - 1].weight += item.weight;
                 }
             })
+
+            maxDataPoints.sort((a, b) => a.date - b.date)
             setPointsToGraph(maxDataPoints);
         }
       };
