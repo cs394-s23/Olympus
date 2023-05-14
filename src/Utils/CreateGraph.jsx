@@ -25,7 +25,7 @@ function CreateGraph({ points }) {
         </linearGradient>
       </defs>
       <XAxis dataKey="date"/>
-      <YAxis domain={['auto', 'auto']} />
+      <YAxis domain={[dataMin => ((dataMin * 0.9).toFixed(2)), dataMax => ((dataMax * 1.1).toFixed(2))]} />
       <CartesianGrid strokeDasharray="3 3" />
       <Tooltip content={<GraphTooltip />} wrapperStyle={{backgroundColor:"transparent", fontWeight:"bold"}}/>
       <Legend />
