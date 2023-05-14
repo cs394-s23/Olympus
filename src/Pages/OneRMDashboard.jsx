@@ -9,6 +9,17 @@ import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import new_data_1RM from "../../new_data_1RM.json";
 
+function parseDate(dateString){
+    let [month, day, year] = dateString.split('/');
+    if (month.length === 1){
+        month = "0" + month;
+    }
+    if (day.length === 1){
+        day = "0" + day;
+    }
+    return new Date(`${year}-${month}-${day}`);
+}
+
 function OneRMDashboard({athlete_name}) {
     let navigate = useNavigate();
     const [pointsToGraph, setPointsToGraph] = useState([]);
@@ -73,13 +84,11 @@ function OneRMDashboard({athlete_name}) {
                     point.e1rm = parseFloat(item["E 1RM"]);
                     point.weight = parseFloat(item["Weight"]);
                     point.reps = parseInt(item["Reps"], 10);
-                    const [month, day, year] = item["Date"].split('/');
-                    point.date = new Date(`${year}-${month}-${day}`);
+                    point.date = parseDate(item["Date"]);
                     point.date_string = item["Date"];
                     newDataPoints.push(point);
                 }
             })
-            newDataPoints.sort((a, b) => a.date - b.date)
             
             let maxDataPoints = [];
             newDataPoints.forEach(item => {
@@ -93,7 +102,9 @@ function OneRMDashboard({athlete_name}) {
             })
 
             // console.log(newDataPoints)
-            ;
+            maxDataPoints.sort((a, b) => a.date - b.date)
+            console.log(maxDataPoints)
+            
             setPointsToGraph(maxDataPoints);
         }
       };
