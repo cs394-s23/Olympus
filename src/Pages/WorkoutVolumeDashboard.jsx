@@ -8,8 +8,10 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import new_data_volume from "../../new_data_volume.json";
 
-function WorkoutVolumeDashboard() {
+
+function WorkoutVolumeDashboard({athlete_name}) {
     const options = [
         'Push 1',
         'Pull 1',
@@ -24,6 +26,12 @@ function WorkoutVolumeDashboard() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [alignment, setAlignment] = useState(options[selectedIndex]);
     const open = Boolean(anchorEl);
+
+    useEffect(() => {
+        handleChange(null, alignment)
+        // let newDataPoints = new_data_1RM[athlete_name];
+        // setDataPoints(newDataPoints);
+    }, [athlete_name]);
 
     useEffect(() => {
         setAlignment(options[selectedIndex]);
@@ -50,12 +58,13 @@ function WorkoutVolumeDashboard() {
         if(newAlignment === null){
             null;
         } else{
+            let data = new_data_volume[athlete_name];
             setAlignment(newAlignment);
             let newDataPoints = [];
-            data_volume[newAlignment].forEach(item => {
-                if(item !== null && item["Volume"] !== ""){
+            data[newAlignment].forEach(item => {
+                if(item !== null && item["Volume"] !== "" && item["Volume"] !== "#VALUE!"){
                     let point = new Object();
-                    point.weight = parseInt(item["Volume"], 10);
+                    point.weight = parseFloat(item["Volume"]);
                     point.date = item["Date"];
                     newDataPoints.push(point);
                 }

@@ -7,10 +7,13 @@ import Menu from '@mui/material/Menu';
 import { set } from "firebase/database";
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import new_data_1RM from "../../new_data_1RM.json";
 
-function OneRMDashboard() {
+function OneRMDashboard({athlete_name}) {
+    let data = new_data_1RM[athlete_name];
     let navigate = useNavigate();
     const [pointsToGraph, setPointsToGraph] = useState([]);
+    const [dataPoints, setDataPoints] = useState([]);
 
     const options = [
         'Bench Press',
@@ -20,12 +23,24 @@ function OneRMDashboard() {
         'Barbell Row',
         'Front Squat'
       ];
-
-    const [anchorEl, setAnchorEl] = useState(null);
+      
+    const [anchorWorkout, setAnchorWorkout] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [alignment, setAlignment] = useState(options[selectedIndex]);
-    const open = Boolean(anchorEl);
+    const open = Boolean(anchorWorkout);
 
+    // const [anchorAthlete, setAnchorAthlete] = useState(null);
+    // const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
+    // const [alignmentAthlete, setAlignmentAthlete] = useState(options[selectedIndex]);
+    // const openAthlete = Boolean(anchorAthlete);
+
+    useEffect(() => {
+        handleChange(null, alignment)
+        // let newDataPoints = new_data_1RM[athlete_name];
+        // setDataPoints(newDataPoints);
+    }, [athlete_name]);
+
+    // Exercises
     useEffect(() => {
         setAlignment(options[selectedIndex]);
     }, [selectedIndex]);
@@ -35,30 +50,30 @@ function OneRMDashboard() {
     }, [alignment]);
 
     const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
+        setAnchorWorkout(event.currentTarget);
     };
 
     const handleMenuItemClick = (event, index) => {
         setSelectedIndex(index);
-        setAnchorEl(null);
+        setAnchorWorkout(null);
     };
 
     const handleClose = () => {
-        setAnchorEl(null);
+        setAnchorWorkout(null);
     };
   
-
     const handleChange = (event, newAlignment) => {
         if(newAlignment === null){
             null;
         } else{
+            let data = new_data_1RM[athlete_name];
             setAlignment(newAlignment);
             let newDataPoints = [];
-            data_1RM[newAlignment].forEach(item => {
-                if(item !== null && item["E 1RM"] !== ""){
+            data[newAlignment].forEach(item => {
+                if(item !== null && item["E 1RM"] !== "" && item["Weight"] === "#VALUE!"){
                     let point = new Object();
-                    point.e1rm = parseInt(item["E 1RM"], 10);
-                    point.weight = parseInt(item["Weight"], 10);
+                    point.e1rm = parseFloat(item["E 1RM"]);
+                    point.weight = parseFloat(item["Weight"]);
                     point.reps = parseInt(item["Reps"], 10);
                     point.date = item["Date"];
                     newDataPoints.push(point);
@@ -100,7 +115,7 @@ function OneRMDashboard() {
             </Button>
                     <Menu
                         id="lock-menu"
-                        anchorEl={anchorEl}
+                        anchorEl={anchorWorkout}
                         open={open}
                         onClose={handleClose}
                         MenuListProps={{
