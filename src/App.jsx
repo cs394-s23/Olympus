@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Register } from './Pages/Register';
 
 
 const App = () => {
@@ -89,6 +90,7 @@ const App = () => {
     <div className="App">
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
+      <Register />
       <div>
         <Button
             id="demo-customized-button"
