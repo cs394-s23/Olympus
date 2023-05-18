@@ -1,5 +1,5 @@
 import data_1RM from "../../data_1RM.json";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
 import MenuItem from '@mui/material/MenuItem';
@@ -8,9 +8,11 @@ import { set } from "firebase/database";
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import new_data_1RM from "../../new_data_1RM.json";
-import parseDate from "../Utils/ParseDate.js";
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { calculatePriorDate, parseDate } from "../Utils/DateUtils";
 
-function OneRMDashboard({athlete_name}) {
+function OneRMDashboard({ athlete_name }) {
     let navigate = useNavigate();
     const [pointsToGraph, setPointsToGraph] = useState([]);
 
@@ -21,23 +23,22 @@ function OneRMDashboard({athlete_name}) {
         'Military Press',
         'Barbell Row',
         'Front Squat'
-      ];
-      
+    ];
+
     const [anchorWorkout, setAnchorWorkout] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [alignment, setAlignment] = useState(options[selectedIndex]);
+    const [dateAlignment, setDateAlignment] = useState('all');
+    const [startDate, setStartDate] = useState('00/00/0000');
     const open = Boolean(anchorWorkout);
-
-    // const [anchorAthlete, setAnchorAthlete] = useState(null);
-    // const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
-    // const [alignmentAthlete, setAlignmentAthlete] = useState(options[selectedIndex]);
-    // const openAthlete = Boolean(anchorAthlete);
 
     useEffect(() => {
         handleChange(null, alignment)
-        // let newDataPoints = new_data_1RM[athlete_name];
-        // setDataPoints(newDataPoints);
     }, [athlete_name]);
+
+    useEffect(() => {
+        handleDateChange(null, dateAlignment)
+    }, [startDate]);
 
     // Exercises
     useEffect(() => {
@@ -60,16 +61,16 @@ function OneRMDashboard({athlete_name}) {
     const handleClose = () => {
         setAnchorWorkout(null);
     };
-  
+
     const handleChange = (event, newAlignment) => {
-        if(newAlignment === null){
+        if (newAlignment === null) {
             null;
-        } else{
+        } else {
             let data = new_data_1RM[athlete_name];
             setAlignment(newAlignment);
             let newDataPoints = [];
             data[newAlignment].forEach(item => {
-                if(item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!"){
+                if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
                     let point = new Object();
                     point.e1rm = parseFloat(item["E 1RM"]);
                     point.weight = parseFloat(item["Weight"]);
@@ -79,53 +80,78 @@ function OneRMDashboard({athlete_name}) {
                     newDataPoints.push(point);
                 }
             })
-            
+
             let maxDataPoints = [];
             newDataPoints.forEach(item => {
-                if(maxDataPoints.length === 0){
-                    maxDataPoints.push(item);
-                } else if(maxDataPoints[maxDataPoints.length - 1].date_string !== item.date_string){
-                    maxDataPoints.push(item);
-                } else if (maxDataPoints[maxDataPoints.length - 1].e1rm < item.e1rm){
-                    maxDataPoints[maxDataPoints.length - 1] = item;
+                var itemDate = new Date(item.date_string)
+                var minDate = new Date(startDate);
+                if (itemDate < minDate) {
+                    null;
+                }
+                else {
+                    if (maxDataPoints.length === 0) {
+                        maxDataPoints.push(item);
+                    } else if (maxDataPoints[maxDataPoints.length - 1].date_string !== item.date_string) {
+                        maxDataPoints.push(item);
+                    } else if (maxDataPoints[maxDataPoints.length - 1].e1rm < item.e1rm) {
+                        maxDataPoints[maxDataPoints.length - 1] = item;
+                    }
                 }
             })
             maxDataPoints.sort((a, b) => a.date - b.date)
             setPointsToGraph(maxDataPoints);
         }
-      };
+    };
+
+    const handleDateChange = (event, newDateAlignment) => {
+        if (newDateAlignment === null) {
+            null;
+        } else {
+            setDateAlignment(newDateAlignment);
+            if (newDateAlignment === "all") {
+                setStartDate("00/00/0000")
+            }
+            else if (newDateAlignment === "3 month") {
+                setStartDate(calculatePriorDate(3));
+            }
+            else if (newDateAlignment === "6 month") {
+                setStartDate(calculatePriorDate(6));
+            }
+        }
+        handleChange(null, alignment);
+    };
 
     return (
         <div>
-            <button id="switch-dashboard" onClick={()=>navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
+            <button id="switch-dashboard" onClick={() => navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
             <br></br>
             <h2>This is your progress for your estimated 1 rep maxes</h2>
-            <h3>Select your exercise here:</h3>
             <br></br>
+            <h3>Select your exercise here:</h3>
             <div>
-            <Button
-            id="demo-customized-button"
-                aria-controls={open ? 'demo-customized-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                variant="outlined"
-                disableElevation
-                onClick={handleClick}
-                endIcon={<KeyboardArrowDownIcon />}
-            >
-                {options[selectedIndex]}
-            </Button>
-                    <Menu
-                        id="lock-menu"
-                        anchorEl={anchorWorkout}
-                        open={open}
-                        onClose={handleClose}
-                        MenuListProps={{
+                <Button
+                    id="demo-customized-button"
+                    aria-controls={open ? 'demo-customized-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    variant="outlined"
+                    disableElevation
+                    onClick={handleClick}
+                    endIcon={<KeyboardArrowDownIcon />}
+                >
+                    {options[selectedIndex]}
+                </Button>
+                <Menu
+                    id="lock-menu"
+                    anchorEl={anchorWorkout}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
                         'aria-labelledby': 'lock-button',
                         role: 'listbox',
-                        }}
-                    >
-                        {options.map((option, index) => (
+                    }}
+                >
+                    {options.map((option, index) => (
                         <MenuItem
                             key={option}
                             selected={index === selectedIndex}
@@ -133,8 +159,20 @@ function OneRMDashboard({athlete_name}) {
                         >
                             {option}
                         </MenuItem>
-                        ))}
-                    </Menu>
+                    ))}
+                </Menu>
+                <ToggleButtonGroup
+                    color="primary"
+                    value={dateAlignment}
+                    exclusive
+                    onChange={handleDateChange}
+                    aria-label="Platform"
+                    id="date-toggle"
+                >
+                    <ToggleButton value="all">All time</ToggleButton>
+                    <ToggleButton value="6 month">Last 6 months</ToggleButton>
+                    <ToggleButton value="3 month">Last 3 months</ToggleButton>
+                </ToggleButtonGroup>
             </div>
             <div>
                 <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
