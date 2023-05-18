@@ -1,0 +1,48 @@
+.formContainer {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formWrapper {
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .logo {
+        color: aqua;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+
+    .title{
+        color: aqua;
+        font-size: 12px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        input{
+            padding: 15px;
+            border: none;
+            border-bottom:1px solid black;
+        }
+    }
+    button {
+        background-color: rgb(67, 67, 146);
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+    
+}

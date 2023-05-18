@@ -14,6 +14,7 @@ import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Register } from './Pages/Register';
+import './style.scss'
 
 
 const App = () => {
@@ -90,8 +91,9 @@ const App = () => {
     <div className="App">
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Register />
+  
       <div>
+        <Button variant="contained" href="/register">Register</Button>
         <Button
             id="demo-customized-button"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -127,6 +129,7 @@ const App = () => {
         </div>
         <BrowserRouter>
           <Routes>
+            <Route path="/register" element={<Register />} />
             <Route path="/" element={<Layout />}>
               <Route index element={<OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />} />
               <Route path="/WorkoutVolumeDashboard" element={<WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />} >
@@ -136,6 +139,7 @@ const App = () => {
         </BrowserRouter>
       </ThemeProvider>
     </div>
+   
   );
 };
 
