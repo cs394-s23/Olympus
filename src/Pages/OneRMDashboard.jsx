@@ -124,6 +124,7 @@ function OneRMDashboard({ athlete_name }) {
     return (
         <div>
             <button id="switch-dashboard" onClick={() => navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
+            
             <br></br>
             <h2>This is your progress for your estimated 1 rep maxes</h2>
             <br></br>
