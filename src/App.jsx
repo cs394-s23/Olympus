@@ -15,6 +15,8 @@ import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Register } from './Pages/Register';
 import './style.scss'
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 
 const App = () => {
@@ -39,6 +41,7 @@ const App = () => {
   const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
   const [alignmentAthlete, setAlignmentAthlete] = useState(athletes[selectedIndexAthlete]);
   const openAthlete = Boolean(anchorAthlete);
+  const [graphAlignment, setGraphAlignment] = useState('1RM');
 
   const dbRef = ref(db);
   get(child(dbRef, `users/`)).then((snapshot) => {
@@ -87,13 +90,18 @@ const App = () => {
     }
   };
 
+  const handleGraphChange = (event, newGraphAlignment) => {
+      setGraphAlignment(newGraphAlignment);
+   
+};
+
   return (
     <div className="App">
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
   
       <div>
-        <Button variant="contained" href="/register">Register</Button>
+        {/* <Button variant="contained" href="/register">Register</Button> */}
         <Button
             id="demo-customized-button"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -128,12 +136,29 @@ const App = () => {
             </Menu>
         </div>
         <BrowserRouter>
+          
           <Routes>
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Layout />}>
-              <Route index element={<OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />} />
+              {/* <Route index element={<OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />} />
               <Route path="/WorkoutVolumeDashboard" element={<WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />} >
-              </Route>
+              </Route> */}
+              <ToggleButtonGroup
+                    color="primary"
+                    value={graphAlignment}
+                    exclusive
+                    onChange={handleGraphChange}
+                    aria-label="Platform"
+                    id="date-toggle"
+                >
+                    <ToggleButton value="volume">Workout Volume</ToggleButton>
+                    <ToggleButton value="1RM">1 Rep Max</ToggleButton>
+              </ToggleButtonGroup>
+                <Route index element={
+                  graphAlignment === "1RM" 
+                  ? <OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />
+                  : <WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />
+                }/>
             </Route>
           </Routes>
         </BrowserRouter>
