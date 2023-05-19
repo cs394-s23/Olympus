@@ -117,18 +117,19 @@ function OneRMDashboard({ athlete_name }) {
             else if (newDateAlignment === "6 month") {
                 setStartDate(calculatePriorDate(6));
             }
+            // else if (newDateAlignment === "1 month") {
+            //     setStartDate(calculatePriorDate(1));
+            // }
         }
         handleChange(null, alignment);
     };
 
     return (
-        <div>
-            <button id="switch-dashboard" onClick={() => navigate("/WorkoutVolumeDashboard")}>Go to Workout Volume Dashboard</button>
-            
+        <div>            
             <br></br>
-            <h2>This is your progress for your estimated 1 rep maxes</h2>
+            {/* <h2>This is your progress for your estimated 1 rep maxes</h2> */}
             <br></br>
-            <h3>Select your exercise here:</h3>
+            {/* <h3>Select your exercise here:</h3> */}
             <div>
                 <Button
                     id="demo-customized-button"
@@ -162,7 +163,15 @@ function OneRMDashboard({ athlete_name }) {
                         </MenuItem>
                     ))}
                 </Menu>
-                <ToggleButtonGroup
+                
+            </div>
+            <div>
+                <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
+                <div id="graph">
+                    <CreateGraph points={pointsToGraph} />
+                </div>
+            </div>
+            <ToggleButtonGroup
                     color="primary"
                     value={dateAlignment}
                     exclusive
@@ -173,14 +182,8 @@ function OneRMDashboard({ athlete_name }) {
                     <ToggleButton value="all">All time</ToggleButton>
                     <ToggleButton value="6 month">Last 6 months</ToggleButton>
                     <ToggleButton value="3 month">Last 3 months</ToggleButton>
+                    {/* <ToggleButton value="1 month">Last month</ToggleButton> */}
                 </ToggleButtonGroup>
-            </div>
-            <div>
-                <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
-                <div id="graph">
-                    <CreateGraph points={pointsToGraph} />
-                </div>
-            </div>
         </div>
     );
 }

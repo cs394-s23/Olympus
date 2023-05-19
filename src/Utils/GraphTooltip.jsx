@@ -11,7 +11,7 @@ const GraphTooltip = ({ active, payload, label }) => {
             <p className="label">Reps: {`${payload[0].payload.reps}`} </p>
           </div>
           : 
-          <p className="label"> {`${label} `} Volume: {`${payload[1].value}`} lbs</p>
+          <p className="label"> {`${label} `} Volume: {`${payload[0].value}`} lbs</p>
           }
           <p className="intro"></p>
           <p className="desc"></p>

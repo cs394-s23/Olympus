@@ -17,6 +17,12 @@ import { Register } from './Pages/Register';
 import './style.scss'
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import ImageIcon from '@mui/icons-material/Image';
 
 
 const App = () => {
@@ -101,7 +107,7 @@ const App = () => {
       <CssBaseline />
   
       <div>
-        {/* <Button variant="contained" href="/register">Register</Button> */}
+        <Button variant="contained" href="/register">Register</Button>
         <Button
             id="demo-customized-button"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -134,31 +140,54 @@ const App = () => {
                 </MenuItem>
               ))}
             </Menu>
+
         </div>
         <BrowserRouter>
           
           <Routes>
             <Route path="/register" element={<Register />} />
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={
+              <div>
+                <Layout />
+                <List
+                
+                >
+                <ListItem sx={{ width: "50%", marginLeft: "auto", marginRight:"auto" }}>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ImageIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary={athletes[selectedIndexAthlete]} secondary="Member since 4/13/2022" />
+                </ListItem>
+                </List>
+                <ToggleButtonGroup
+                      color="primary"
+                      value={graphAlignment}
+                      exclusive
+                      onChange={handleGraphChange}
+                      aria-label="Platform"
+                      id="date-toggle"
+                  >
+                      <ToggleButton value="volume">Workout Volume Dashboard </ToggleButton>
+                      <ToggleButton value="1RM">1 Rep Max Dashboard</ToggleButton>
+                </ToggleButtonGroup>
+                {
+                  graphAlignment === "1RM" 
+                  ? <OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />
+                  : <WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />
+                }
+              </div>
+            }>
               {/* <Route index element={<OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />} />
               <Route path="/WorkoutVolumeDashboard" element={<WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />} >
               </Route> */}
-              <ToggleButtonGroup
-                    color="primary"
-                    value={graphAlignment}
-                    exclusive
-                    onChange={handleGraphChange}
-                    aria-label="Platform"
-                    id="date-toggle"
-                >
-                    <ToggleButton value="volume">Workout Volume</ToggleButton>
-                    <ToggleButton value="1RM">1 Rep Max</ToggleButton>
-              </ToggleButtonGroup>
+{/*               
                 <Route index element={
                   graphAlignment === "1RM" 
                   ? <OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />
                   : <WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />
-                }/>
+                }/> */}
             </Route>
           </Routes>
         </BrowserRouter>

@@ -28,11 +28,11 @@ function CreateGraph({ points }) {
       <YAxis domain={[dataMin => ((dataMin * 0.9).toFixed(2)), dataMax => ((dataMax * 1.1).toFixed(2))]} />
       <CartesianGrid strokeDasharray="3 3" />
       <Tooltip content={<GraphTooltip />} wrapperStyle={{backgroundColor:"transparent", fontWeight:"bold"}}/>
+      <Line isAnimationActive={false} type="monotone" dataKey="e1rm" stroke="#84d896" activeDot={{ r: 8 }} strokeDasharray="5 5" strokeWidth={3}/>
+      <Line isAnimationActive={false} type="monotone" dataKey="weight" stroke="#e3e046" activeDot={{ r: 8 }} strokeWidth={3} />
+      <Area isAnimationActive={false} type="monotone" dataKey="e1rm" stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />
+      <Area isAnimationActive={false} type="monotone" dataKey="weight" stroke="#e3e046" fillOpacity={0.5} fill="#e3e046" legendType='none' />
       <Legend />
-      <Line type="monotone" dataKey="e1rm" stroke="#84d896" activeDot={{ r: 8 }} strokeDasharray="5 5" strokeWidth={3}/>
-      <Line type="monotone" dataKey="weight" stroke="#e3e046" activeDot={{ r: 8 }} strokeWidth={3} />
-      <Area type="monotone" dataKey="e1rm" stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />
-      <Area type="monotone" dataKey="weight" stroke="#e3e046" fillOpacity={0.5} fill="#e3e046" legendType='none' />
     </ComposedChart>
   )
 }

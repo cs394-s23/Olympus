@@ -119,11 +119,10 @@ function WorkoutVolumeDashboard({ athlete_name }) {
 
     return (
         <div>
-            <button id="switch-dashboard" onClick={() => navigate("/")}>Go to One Rep Max Dashboard</button>
+            {/* <h2>This is your progress for your workout volume</h2> */}
+            {/* <h3>Select your exercise here:</h3> */}
             <br></br>
-            <h2>This is your progress for your workout volume</h2>
             <br></br>
-            <h3>Select your exercise here:</h3>
             <div>
                 <Button
                     id="demo-customized-button"
@@ -157,7 +156,15 @@ function WorkoutVolumeDashboard({ athlete_name }) {
                         </MenuItem>
                     ))}
                 </Menu>
-                <ToggleButtonGroup
+                
+            </div>
+            <div>
+                <h3>This is your estimated workout volume progress for {alignment}: </h3>
+                <div id="graph">
+                    <CreateGraph points={pointsToGraph} />
+                </div>
+            </div>
+            <ToggleButtonGroup
                     color="primary"
                     value={dateAlignment}
                     exclusive
@@ -169,13 +176,6 @@ function WorkoutVolumeDashboard({ athlete_name }) {
                     <ToggleButton value="6 month">Last 6 months</ToggleButton>
                     <ToggleButton value="3 month">Last 3 months</ToggleButton>
                 </ToggleButtonGroup>
-            </div>
-            <div>
-                <h3>This is your estimated workout volume progress for {alignment}: </h3>
-                <div id="graph">
-                    <CreateGraph points={pointsToGraph} />
-                </div>
-            </div>
         </div>
     );
 }
