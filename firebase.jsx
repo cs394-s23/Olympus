@@ -7,6 +7,7 @@ import 'firebase/compat/auth';
 import { connectAuthEmulator, GoogleAuthProvider, signInWithCredential } from "firebase/auth";
 import { connectFirestoreEmulator } from "firebase/firestore";
 import { getDatabase } from "firebase/database";
+import { getAuth } from 'firebase/auth'; 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -36,8 +37,8 @@ const firebaseDatabaseConfig = {
 export const app = firebase.initializeApp(firebaseAppConfig);
 export const dbApp = firebase.initializeApp(firebaseDatabaseConfig, "database");
 export const db = getDatabase(app);
-const analytics = getAnalytics(app);
-const projectAuth = firebase.auth();
+// const analytics = getAnalytics(app);
+const projectAuth = getAuth();;
 
 
 // if (process.env.NODE_ENV!== 'production') {
