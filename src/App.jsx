@@ -109,7 +109,7 @@ const App = () => {
       <div>
         <Button variant="contained" href="/register">Register</Button>
         <Button
-            id="demo-customized-button"
+            id="athelete-menu"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
@@ -117,6 +117,7 @@ const App = () => {
                 disableElevation
                 onClick={handleClickAthlete}
                 endIcon={<KeyboardArrowDownIcon />}
+                data-testid="athelete-menu"
             >
                 {athletes[selectedIndexAthlete]}
             </Button>
@@ -135,6 +136,7 @@ const App = () => {
                   key={option}
                   selected={index === selectedIndexAthlete}
                   onClick={(event) => handleMenuItemClickAthlete(event, index)}
+                  data-testid={"athelete-menu-item-"+option}
                 >
                   {option}
                 </MenuItem>
