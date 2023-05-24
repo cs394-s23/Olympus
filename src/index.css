@@ -14,6 +14,7 @@ code {
 
 .recharts-wrapper {
   margin : 0 auto;
+  justify-content: center;
 }
 
 #switch-dashboard {
@@ -24,4 +25,10 @@ code {
 
 #date-toggle{
   padding-left: 0.5%;
+}
+
+#graph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

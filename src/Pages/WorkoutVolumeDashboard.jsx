@@ -119,13 +119,12 @@ function WorkoutVolumeDashboard({ athlete_name }) {
 
     return (
         <div>
-            {/* <h2>This is your progress for your workout volume</h2> */}
-            {/* <h3>Select your exercise here:</h3> */}
             <br></br>
             <br></br>
             <div>
                 <Button
                     id="demo-customized-button"
+                    data-testid = "split-options"
                     aria-controls={open ? 'demo-customized-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
@@ -151,6 +150,7 @@ function WorkoutVolumeDashboard({ athlete_name }) {
                             key={option}
                             selected={index === selectedIndex}
                             onClick={(event) => handleMenuItemClick(event, index)}
+                            data-testid={"split-options-"+option}
                         >
                             {option}
                         </MenuItem>

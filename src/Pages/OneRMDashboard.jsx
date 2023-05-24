@@ -133,6 +133,7 @@ function OneRMDashboard({ athlete_name }) {
             <div>
                 <Button
                     id="demo-customized-button"
+                    data-testid = "workout-options"
                     aria-controls={open ? 'demo-customized-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
@@ -158,6 +159,7 @@ function OneRMDashboard({ athlete_name }) {
                             key={option}
                             selected={index === selectedIndex}
                             onClick={(event) => handleMenuItemClick(event, index)}
+                            data-testid={"workout-"+option}
                         >
                             {option}
                         </MenuItem>

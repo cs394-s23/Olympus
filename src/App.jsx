@@ -169,9 +169,8 @@ const App = () => {
                       exclusive
                       onChange={handleGraphChange}
                       aria-label="Platform"
-                      id="date-toggle"
                   >
-                      <ToggleButton value="volume">Workout Volume Dashboard </ToggleButton>
+                      <ToggleButton value="volume" data-testid = "dashboard-toggle-volume">Workout Volume Dashboard </ToggleButton>
                       <ToggleButton value="1RM">1 Rep Max Dashboard</ToggleButton>
                 </ToggleButtonGroup>
                 {
