@@ -1,4 +1,3 @@
-import data_1RM from "../../data_1RM.json";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
@@ -13,6 +12,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { calculatePriorDate, parseDate } from "../Utils/DateUtils";
 
 function OneRMDashboard({ athlete_name }) {
+    console.log("in dashboard", athlete_name);
     let navigate = useNavigate();
     const [pointsToGraph, setPointsToGraph] = useState([]);
 
