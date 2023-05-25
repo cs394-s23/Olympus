@@ -2,6 +2,14 @@ import { useState, useEffect, useContext } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { db } from "../firebase";
+import {
+  getDatabase,
+  ref,
+  query,
+  orderByChild,
+  get,
+  child,
+} from "firebase/database";
 import { Router, BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Layout from "./Utils/Layout";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -39,6 +47,17 @@ const App = () => {
   const {alignmentAthlete, updateAlignmentAthlete} = useContext(UserContext)
 
   const openAthlete = Boolean(anchorAthlete);
+
+  const dbRef = ref(db);
+  get(child(dbRef, `users/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      // console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
 
   const darkTheme = createTheme({
     palette: {
