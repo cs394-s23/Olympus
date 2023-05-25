@@ -1,53 +1,52 @@
-import { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { db } from '../firebase';
-import { getDatabase, ref, query, orderByChild, get, child } from "firebase/database";
-import { Router, BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from './Utils/Layout';
-import OneRMDashboard from './Pages/OneRMDashboard';
-import WorkoutVolumeDashboard from './Pages/WorkoutVolumeDashboard';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import Button from '@mui/material/Button';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Register } from './Pages/Register';
-import './style.scss'
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
-import ImageIcon from '@mui/icons-material/Image';
+import { useState, useEffect, useContext } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { db } from "../firebase";
+import {
+  getDatabase,
+  ref,
+  query,
+  orderByChild,
+  get,
+  child,
+} from "firebase/database";
+import { Router, BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Layout from "./Utils/Layout";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
+import Button from "@mui/material/Button";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Register } from "./Pages/Register";
+import "./style.scss";
+import { Dashboard } from "./Pages/Dashboard";
+import { UserContext } from "./Utils/UserProvider";
 
 
 const App = () => {
   const [count, setCount] = useState(0);
 
   const athletes = [
-    'Scott',
-    'Kevin',
-    'Kahlin',
-    'Jake',
-    'Mark',
-    'Brent',
-    'Cate',
-    'Madi',
-    'Leigh',
-    'Chaitra',
-    'Mariel',
-    'Sonali'
+    "Scott",
+    "Kevin",
+    "Kahlin",
+    "Jake",
+    "Mark",
+    "Brent",
+    "Cate",
+    "Madi",
+    "Leigh",
+    "Chaitra",
+    "Mariel",
+    "Sonali",
   ];
 
   const [anchorAthlete, setAnchorAthlete] = useState(null);
   const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
-  const [alignmentAthlete, setAlignmentAthlete] = useState(athletes[selectedIndexAthlete]);
+  const {alignmentAthlete, updateAlignmentAthlete} = useContext(UserContext)
+
   const openAthlete = Boolean(anchorAthlete);
-  const [graphAlignment, setGraphAlignment] = useState('1RM');
 
   const dbRef = ref(db);
   get(child(dbRef, `users/`)).then((snapshot) => {
@@ -62,18 +61,10 @@ const App = () => {
 
   const darkTheme = createTheme({
     palette: {
-      mode: 'dark',
+      mode: "dark",
     },
   });
 
-  // Athletes
-  useEffect(() => {
-    setAlignmentAthlete(athletes[selectedIndexAthlete]);
-  }, [selectedIndexAthlete]);
-
-  useEffect(() => {
-    handleChange(null, setAlignmentAthlete);
-  }, [alignmentAthlete]);
 
   const handleClickAthlete = (event) => {
     setAnchorAthlete(event.currentTarget);
@@ -81,120 +72,88 @@ const App = () => {
 
   const handleMenuItemClickAthlete = (event, index) => {
     setSelectedIndexAthlete(index);
+    updateAlignmentAthlete(athletes[index])
     setAnchorAthlete(null);
   };
 
   const handleClose = () => {
     setAnchorAthlete(null);
   };
-  
-  const handleChange = (event, newAlignment) => {
-    if(newAlignment === null){
-        null;
-    } else{
-        setAlignmentAthlete(newAlignment);
-    }
-  };
-
-  const handleGraphChange = (event, newGraphAlignment) => {
-      setGraphAlignment(newGraphAlignment);
-   
-};
 
   return (
     <div className="App">
       <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-  
-      <div>
-        <Button variant="contained" href="/register">Register</Button>
-        <Button
-            id="athelete-menu"
-                aria-controls={open ? 'demo-customized-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                variant="outlined"
-                disableElevation
-                onClick={handleClickAthlete}
-                endIcon={<KeyboardArrowDownIcon />}
-                data-testid="athelete-menu"
-            >
-                {athletes[selectedIndexAthlete]}
-            </Button>
-            <Menu
-              id="lock-menu"
-              anchorEl={anchorAthlete}
-              open={openAthlete}
-              onClose={handleClose}
-              MenuListProps={{
-                'aria-labelledby': 'lock-button',
-                role: 'listbox',
-              }}
-            >
-              {athletes.map((option, index) => (
-                <MenuItem
-                  key={option}
-                  selected={index === selectedIndexAthlete}
-                  onClick={(event) => handleMenuItemClickAthlete(event, index)}
-                  data-testid={"athelete-menu-item-"+option}
-                >
-                  {option}
-                </MenuItem>
-              ))}
-            </Menu>
+        <CssBaseline />
 
-        </div>
+        <div></div>
         <BrowserRouter>
-          
           <Routes>
             <Route path="/register" element={<Register />} />
-            <Route path="/" element={
-              <div>
-                <Layout />
-                <List
-                
-                >
-                <ListItem sx={{ width: "50%", marginLeft: "auto", marginRight:"auto" }}>
-                  <ListItemAvatar>
-                    <Avatar>
-                      <ImageIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText primary={athletes[selectedIndexAthlete]} secondary="Member since 4/13/2022" />
-                </ListItem>
-                </List>
-                <ToggleButtonGroup
-                      color="primary"
-                      value={graphAlignment}
-                      exclusive
-                      onChange={handleGraphChange}
-                      aria-label="Platform"
-                  >
-                      <ToggleButton value="volume" data-testid = "dashboard-toggle-volume">Workout Volume Dashboard </ToggleButton>
-                      <ToggleButton value="1RM">1 Rep Max Dashboard</ToggleButton>
-                </ToggleButtonGroup>
-                {
-                  graphAlignment === "1RM" 
-                  ? <OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />
-                  : <WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />
-                }
-              </div>
-            }>
-              {/* <Route index element={<OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />} />
-              <Route path="/WorkoutVolumeDashboard" element={<WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />} >
-              </Route> */}
-{/*               
-                <Route index element={
-                  graphAlignment === "1RM" 
-                  ? <OneRMDashboard athlete_name={athletes[selectedIndexAthlete]} />
-                  : <WorkoutVolumeDashboard athlete_name={athletes[selectedIndexAthlete]} />
-                }/> */}
-            </Route>
+            <Route
+              path="/"
+              element={
+                <div>
+                  <Layout />
+                  <div>
+                      <Button variant="contained" href="/register">
+                        Register
+                      </Button>
+                      <h1>Choose a user:</h1>
+                      <Button
+                        id="athelete-menu"
+                        aria-controls={
+                          open ? "demo-customized-menu" : undefined
+                        }
+                        aria-haspopup="true"
+                        aria-expanded={open ? "true" : undefined}
+                        variant="outlined"
+                        disableElevation
+                        onClick={handleClickAthlete}
+                        endIcon={<KeyboardArrowDownIcon />}
+                        data-testid="athelete-menu">
+                        {athletes[selectedIndexAthlete]}
+                      </Button>
+                      <Menu
+                        id="lock-menu"
+                        anchorEl={anchorAthlete}
+                        open={openAthlete}
+                        onClose={handleClose}
+                        MenuListProps={{
+                          "aria-labelledby": "lock-button",
+                          role: "listbox",
+                        }}>
+                        {athletes.map((option, index) => (
+                          <MenuItem
+                            key={option}
+                            selected={index === selectedIndexAthlete}
+                            onClick={(event) =>
+                              handleMenuItemClickAthlete(event, index)
+                            }
+                            data-testid={"athelete-menu-item-" + option}>
+                            {option}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                      <br />
+                      <br />
+                      <Link to="/dashboard">
+                      <Button variant="contained">
+                        Continue
+                      </Button>
+                      </Link>
+                  </div>
+                </div>
+              }></Route>
+            <Route
+              path="/dashboard"
+              element={
+                <Dashboard />
+              }
+            />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
     </div>
-   
   );
 };
 
