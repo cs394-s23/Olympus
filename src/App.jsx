@@ -1,16 +1,8 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { db } from "../firebase";
-import {
-  getDatabase,
-  ref,
-  query,
-  orderByChild,
-  get,
-  child,
-} from "firebase/database";
-import { Router, BrowserRouter, Routes, Route } from "react-router-dom";
+import { Router, BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Layout from "./Utils/Layout";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -21,12 +13,10 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Register } from "./Pages/Register";
 import "./style.scss";
 import { Dashboard } from "./Pages/Dashboard";
-import UserContext from './Utils/UserContext';
+import { UserContext } from "./Utils/UserProvider";
 
-let athleteName = "Scott";
 
 const App = () => {
-  // const UserContext = createContext()
   const [count, setCount] = useState(0);
 
   const athletes = [
@@ -46,23 +36,9 @@ const App = () => {
 
   const [anchorAthlete, setAnchorAthlete] = useState(null);
   const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
-  const [alignmentAthlete, setAlignmentAthlete] = useState(
-    athletes[selectedIndexAthlete]
-  );
-  const openAthlete = Boolean(anchorAthlete);
+  const {alignmentAthlete, updateAlignmentAthlete} = useContext(UserContext)
 
-  const dbRef = ref(db);
-  get(child(dbRef, `users/`))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        // console.log(snapshot.val());
-      } else {
-        console.log("No data available");
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  const openAthlete = Boolean(anchorAthlete);
 
   const darkTheme = createTheme({
     palette: {
@@ -70,15 +46,6 @@ const App = () => {
     },
   });
 
-  // Athletes
-  useEffect(() => {
-    setAlignmentAthlete(athletes[selectedIndexAthlete]);
-    console.log("update alignment athlete: ", alignmentAthlete);
-  }, [selectedIndexAthlete]);
-
-  useEffect(() => {
-    handleChange(null, setAlignmentAthlete);
-  }, [alignmentAthlete]);
 
   const handleClickAthlete = (event) => {
     setAnchorAthlete(event.currentTarget);
@@ -86,6 +53,7 @@ const App = () => {
 
   const handleMenuItemClickAthlete = (event, index) => {
     setSelectedIndexAthlete(index);
+    updateAlignmentAthlete(athletes[index])
     setAnchorAthlete(null);
   };
 
@@ -93,19 +61,7 @@ const App = () => {
     setAnchorAthlete(null);
   };
 
-  const handleChange = (event, newAlignment) => {
-    if (newAlignment === null) {
-      null;
-    } else {
-      athleteName = athletes[selectedIndexAthlete];
-
-      setAlignmentAthlete(newAlignment);
-      console.log(athletes[selectedIndexAthlete]);
-    }
-  };
-
   return (
-    <UserContext.Provider value={alignmentAthlete}>
     <div className="App">
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
@@ -161,23 +117,24 @@ const App = () => {
                       </Menu>
                       <br />
                       <br />
-                      <Button variant="contained" href="/dashboard">
+                      <Link to="/dashboard">
+                      <Button variant="contained">
                         Continue
                       </Button>
+                      </Link>
                   </div>
                 </div>
               }></Route>
             <Route
               path="/dashboard"
               element={
-                <Dashboard athleteName={athleteName} context={UserContext} />
+                <Dashboard />
               }
             />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
     </div>
-    </UserContext.Provider>
   );
 };
 

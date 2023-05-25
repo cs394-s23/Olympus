@@ -9,11 +9,11 @@ import ImageIcon from '@mui/icons-material/Image';
 import OneRMDashboard from './OneRMDashboard';
 import WorkoutVolumeDashboard from './WorkoutVolumeDashboard';
 import { useState, useEffect, useContext } from 'react';
-import UserContext from '../Utils/UserContext';
+import { UserContext } from '../Utils/UserProvider';
 
 
-export function Dashboard({athleteName, context}){
-    const alignmentAthlete = useContext(UserContext)
+export function Dashboard(){
+    const {alignmentAthlete} = useContext(UserContext)
     console.log("in user context", alignmentAthlete);
     // console.log("in dashboard", alignmentAthlete);
     const [graphAlignment, setGraphAlignment] = useState('1RM');
