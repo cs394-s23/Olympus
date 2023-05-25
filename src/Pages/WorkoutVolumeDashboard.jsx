@@ -2,16 +2,18 @@ import data_volume from "../../data_volume.json";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
+import CreateGraphFriend from "../Utils/CreateGraphFriend";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import Checkbox from '@mui/material/Checkbox';
 import new_data_volume from "../../new_data_volume.json";
 import { calculatePriorDate, parseDate } from "../Utils/DateUtils";
 
-function WorkoutVolumeDashboard({ athlete_name }) {
+function WorkoutVolumeDashboard({ athlete_name, athlete_list }) {
     const options = [
         'Push 1',
         'Pull 1',
@@ -27,13 +29,19 @@ function WorkoutVolumeDashboard({ athlete_name }) {
     const [alignment, setAlignment] = useState(options[selectedIndex]);
     const [dateAlignment, setDateAlignment] = useState('all');
     const [startDate, setStartDate] = useState('00/00/0000');
+    
+    const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
+    const [anchorAthlete, setAnchorAthlete] = useState(null);
+    const [alignmentAthlete, updateAlignmentAthlete] = useState(athlete_list[0]);
+    const [checked, setChecked] = useState(false);
+    const openAthlete = Boolean(anchorAthlete);
     const open = Boolean(anchorEl);
 
     useEffect(() => {
+        if (!checked) updateAlignmentAthlete(null);
+        updateAlignmentAthlete(alignmentAthlete);
         handleChange(null, alignment)
-        // let newDataPoints = new_data_1RM[athlete_name];
-        // setDataPoints(newDataPoints);
-    }, [athlete_name]);
+      }, [alignmentAthlete, checked]);
 
     useEffect(() => {
         handleDateChange(null, dateAlignment)
@@ -51,6 +59,10 @@ function WorkoutVolumeDashboard({ athlete_name }) {
         setAnchorEl(event.currentTarget);
     };
 
+    const handleCheck = () => {
+        setChecked(!checked);
+    }
+
     const handleMenuItemClick = (event, index) => {
         setSelectedIndex(index);
         setAnchorEl(null);
@@ -58,6 +70,16 @@ function WorkoutVolumeDashboard({ athlete_name }) {
 
     const handleClose = () => {
         setAnchorEl(null);
+    };
+
+    const handleClickAthlete = (event) => {
+        setAnchorAthlete(event.currentTarget);
+    };
+
+    const handleMenuItemClickAthlete = (event, index) => {
+        setSelectedIndexAthlete(index);
+        updateAlignmentAthlete(athlete_list[index])
+        setAnchorAthlete(null);
     };
 
     const handleChange = (event, newAlignment) => {
@@ -68,7 +90,7 @@ function WorkoutVolumeDashboard({ athlete_name }) {
             setAlignment(newAlignment);
             let newDataPoints = [];
             data[newAlignment].forEach(item => {
-                if (item !== null && item["Volume"] !== "" && item["Volume"] !== "#VALUE!") {
+                if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
                     let point = new Object();
                     point.weight = parseFloat(item["Volume"]);
                     point.date = parseDate(item["Date"]);
@@ -76,8 +98,29 @@ function WorkoutVolumeDashboard({ athlete_name }) {
                     newDataPoints.push(point);
                 }
             })
+
+            
+            /// Friend's data:
+            if (checked) {
+                let friend_data = new_data_volume[alignmentAthlete];
+                // setAlignment(newAlignment);
+                // let newFriendDataPoints = [];
+                friend_data[newAlignment].forEach(item => {
+                    if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
+                        let point = new Object();
+                        point.weight_friend = parseFloat(item["Volume"]);
+                        point.date = parseDate(item["Date"]);
+                        point.date_string = item["Date"];
+                        newDataPoints.push(point);
+                    }
+                })
+            }
+
+            // else {
+            //     setPointsToGraphFriend([]);
+            // }
             let maxDataPoints = [];
-            newDataPoints.forEach(item => {
+                newDataPoints.forEach(item => {
                 var itemDate = new Date(item.date_string)
                 var minDate = new Date(startDate);
                 if (itemDate < minDate) {
@@ -89,14 +132,20 @@ function WorkoutVolumeDashboard({ athlete_name }) {
                     } else if (maxDataPoints[maxDataPoints.length - 1].date_string !== item.date_string) {
                         maxDataPoints.push(item);
                     } else {
-                        maxDataPoints[maxDataPoints.length - 1].weight += item.weight;
+                        if(!maxDataPoints[maxDataPoints.length - 1].weight_friend){
+                            maxDataPoints[maxDataPoints.length - 1].weight += item.weight;
+                        }
+                        else {
+                            maxDataPoints[maxDataPoints.length - 1].weight_friend += item.weight_friend;
+                        }
                     }
                 }
             })
-
+            
             maxDataPoints.sort((a, b) => a.date - b.date)
             setPointsToGraph(maxDataPoints);
         }
+    
     };
 
     const handleDateChange = (event, newDateAlignment) => {
@@ -161,7 +210,9 @@ function WorkoutVolumeDashboard({ athlete_name }) {
             <div>
                 <h3>This is your estimated workout volume progress for {alignment}: </h3>
                 <div id="graph">
-                    <CreateGraph points={pointsToGraph} />
+                    {checked 
+                    ? <CreateGraphFriend points={pointsToGraph}/>
+                    : <CreateGraph points={pointsToGraph}/>}         
                 </div>
             </div>
             <ToggleButtonGroup
@@ -176,6 +227,45 @@ function WorkoutVolumeDashboard({ athlete_name }) {
                     <ToggleButton value="6 month">Last 6 months</ToggleButton>
                     <ToggleButton value="3 month">Last 3 months</ToggleButton>
                 </ToggleButtonGroup>
+                <div>
+                <Checkbox checked={checked} onChange={handleCheck} />
+                <h4 style={{ "display": "inline", "padding-right": "1px" }}> Compare with: </h4>
+                <Button
+                    id="compare-dropdown"
+                    aria-controls={
+                        open ? "demo-customized-menu" : undefined
+                    }
+                    aria-haspopup="true"
+                    aria-expanded={open ? "true" : undefined}
+                    variant="outlined"
+                    disableElevation
+                    onClick={handleClickAthlete}
+                    endIcon={<KeyboardArrowDownIcon />}
+                    data-testid="athelete-menu">
+                    {athlete_list[selectedIndexAthlete]}
+                </Button>
+                <Menu
+                    id="lock-menu"
+                    anchorEl={anchorAthlete}
+                    open={openAthlete}
+                    onClose={handleClose}
+                    MenuListProps={{
+                        "aria-labelledby": "lock-button",
+                        role: "listbox",
+                    }}>
+                    {athlete_list.map((option, index) => (
+                        <MenuItem
+                            key={option}
+                            selected={index === selectedIndexAthlete}
+                            onClick={(event) =>
+                                handleMenuItemClickAthlete(event, index)
+                            }
+                            data-testid={"athelete-menu-item-" + option}>
+                            {option}
+                        </MenuItem>
+                    ))}
+                </Menu>
+            </div>
         </div>
     );
 }

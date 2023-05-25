@@ -39,7 +39,7 @@ const App = () => {
     "Leigh",
     "Chaitra",
     "Mariel",
-    "Sonali",
+    "Jordan",
   ];
 
   const [anchorAthlete, setAnchorAthlete] = useState(null);
@@ -95,9 +95,9 @@ const App = () => {
                 <div>
                   <Layout />
                   <div>
-                      <Button variant="contained" href="/register">
+                      {/* <Button variant="contained" href="/register">
                         Register
-                      </Button>
+                      </Button> */}
                       <h1>Choose a user:</h1>
                       <Button
                         id="athelete-menu"
@@ -147,7 +147,7 @@ const App = () => {
             <Route
               path="/dashboard"
               element={
-                <Dashboard />
+                <Dashboard athleteName = {alignmentAthlete} athleteList = {athletes.filter(name => name !== alignmentAthlete)}/>
               }
             />
           </Routes>

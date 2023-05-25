@@ -1,9 +1,9 @@
 import { ComposedChart, AreaChart, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area } from 'recharts';
 import GraphTooltip from './GraphTooltip';
 
-function CreateGraph({ points }) {
+function CreateGraph({ points}) {
   return (
-    // <ResponsiveContainer width="40%" height="30%" id="graph-container">
+    <ResponsiveContainer width={800} height={500} id="graph-container">
       <ComposedChart
         width={800}
         height={500}
@@ -28,14 +28,15 @@ function CreateGraph({ points }) {
         <XAxis dataKey="date_string" />
         <YAxis domain={[dataMin => ((dataMin * 0.9).toFixed(2)), dataMax => ((dataMax * 1.1).toFixed(2))]} />
         <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip content={<GraphTooltip />} wrapperStyle={{backgroundColor:"transparent", fontWeight:"bold"}}/>
-        <Line isAnimationActive={true} type="monotone" dataKey="e1rm" stroke="#84d896" activeDot={{ r: 8 }} strokeDasharray="5 5" strokeWidth={3}/>
-        <Line isAnimationActive={true} type="monotone" dataKey="weight" stroke="#e3e046" activeDot={{ r: 8 }} strokeWidth={3} />
-        <Area isAnimationActive={true} type="monotone" dataKey="e1rm" stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />
-        <Area isAnimationActive={true} type="monotone" dataKey="weight" stroke="#e3e046" fillOpacity={0.5} fill="#e3e046" legendType='none' />
+        <Tooltip content={<GraphTooltip />} wrapperStyle={{ backgroundColor: "transparent", fontWeight: "bold" }} />
+        <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey="e1rm" stroke="#84d896" activeDot={{ r: 8 }} strokeDasharray="5 5" strokeWidth={3} />,
+        <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight" stroke="#e3e046" activeDot={{ r: 8 }} strokeWidth={3} />,
+        <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey="e1rm" stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />,
+        <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight" stroke="#e3e046" fillOpacity={0.5} fill="#e3e046" legendType='none' />
+          
         <Legend />
       </ComposedChart>
-    // </ResponsiveContainer>
+    </ResponsiveContainer>
   )
 }
 export default CreateGraph;
