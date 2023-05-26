@@ -1,7 +1,7 @@
 import { ComposedChart, AreaChart, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area } from 'recharts';
 import GraphTooltip from './GraphTooltip';
 
-function CreateGraphFriend({ points }) {
+function CreateGraphFriend({ points, dashboardType }) {
   return (
     <ResponsiveContainer width={800} height={500} id="graph-container">
       <ComposedChart
@@ -30,10 +30,10 @@ function CreateGraphFriend({ points }) {
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip content={<GraphTooltip />} wrapperStyle={{ backgroundColor: "transparent", fontWeight: "bold" }} />
 
-            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight" stroke="#84d896" activeDot={{ r: 8 }} strokeDasharray="5 5" strokeWidth={3} />,
-            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight_friend" stroke="#4b58ea" activeDot={{ r: 8 }} strokeWidth={3} />,
-            <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight" stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />,
-            <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight_friend" stroke="#4b58ea" fillOpacity={0.5} fill="#4b58ea" legendType='none' />
+            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm" : "weight"} stroke="#84d896" activeDot={{ r: 8 }} strokeDasharray="5 5" strokeWidth={3} name={dashboardType === "1RM" ? "Your Expected 1RM" : "Your Total Volume"}/>,
+            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm_friend" : "weight_friend"} stroke="#4b58ea" activeDot={{ r: 8 }} strokeWidth={3} name={dashboardType === "1RM" ? "Friend's Expected 1RM" : "Friend's Total Volume"}/>,
+            <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm" : "weight"} stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />,
+            <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm_friend" : "weight_friend"} stroke="#4b58ea" fillOpacity={0.5} fill="#4b58ea" legendType='none' />
         <Legend />
       </ComposedChart>
     </ResponsiveContainer>

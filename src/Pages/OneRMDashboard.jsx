@@ -225,8 +225,8 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
                 <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
                 <div id="graph">
                     {checked 
-                    ? <CreateGraphFriend points={pointsToGraph}/>
-                    : <CreateGraph points={pointsToGraph}/>}         
+                    ? <CreateGraphFriend points={pointsToGraph} dashboardType="1RM"/>
+                    : <CreateGraph points={pointsToGraph} dashboardType="1RM"/>}         
                 </div>
             </div>
             <ToggleButtonGroup

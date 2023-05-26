@@ -211,8 +211,8 @@ function WorkoutVolumeDashboard({ athlete_name, athlete_list }) {
                 <h3>This is your estimated workout volume progress for {alignment}: </h3>
                 <div id="graph">
                     {checked 
-                    ? <CreateGraphFriend points={pointsToGraph}/>
-                    : <CreateGraph points={pointsToGraph}/>}         
+                    ? <CreateGraphFriend points={pointsToGraph} dashboardType="Volume"/>
+                    : <CreateGraph points={pointsToGraph} dashboardType="Volume"/>}         
                 </div>
             </div>
             <ToggleButtonGroup
