@@ -59,18 +59,24 @@ export function Dashboard({ athleteName, athleteList }) {
 
   return (
     <div>
-      <Button onClick={() => navigate("/")}>
+      {/* <Button onClick={() => navigate("/")}>
         Switch User
 
-      </Button>
+      </Button> */}
       <List >
-        <ListItem sx={{ width: "50%", marginLeft: "auto", marginRight: "auto" }}>
+        <ListItem sx={{ width: "50%", marginLeft: "auto", marginRight: "auto" , marginBottom: "-15px"}}>
           <ListItemAvatar>
             <Avatar>
               <ImageIcon />
             </Avatar>
           </ListItemAvatar>
           <ListItemText primary={athleteName} secondary="Member since 4/13/2022" />
+          {/* <ListItem></ListItem> */}
+        </ListItem>
+        <ListItem sx={{ width: "50%", marginLeft: "25%", marginRight: "20%", paddingLeft: "60px"}}>
+            <Button onClick={() => navigate("/")}>
+              Switch User
+            </Button>
         </ListItem>
       </List>
       <ToggleButtonGroup
@@ -89,7 +95,7 @@ export function Dashboard({ athleteName, athleteList }) {
       {
         graphAlignment === "1RM"
           ? <OneRMDashboard athlete_name={athleteName} athlete_list={athleteList} />
-            : <WorkoutVolumeDashboard athlete_name={athleteName} athlete_list={athleteList} />
+          : <WorkoutVolumeDashboard athlete_name={athleteName} athlete_list={athleteList} />
       }
     </div>
   )

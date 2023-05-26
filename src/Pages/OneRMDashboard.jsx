@@ -244,7 +244,7 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
             </ToggleButtonGroup>
             <div>
                 <Checkbox checked={checked} onChange={handleCheck} />
-                <h4 style={{ "display": "inline", "padding-right": "1px" }}> Compare with: </h4>
+                <h4 style={{ "display": "inline", "paddingRight": "1px" }}> Compare with: </h4>
                 <Button
                     id="compare-dropdown"
                     aria-controls={

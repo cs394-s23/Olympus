@@ -31,9 +31,9 @@ function CreateGraphFriend({ points }) {
         <Tooltip content={<GraphTooltip />} wrapperStyle={{ backgroundColor: "transparent", fontWeight: "bold" }} />
 
             <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight" stroke="#84d896" activeDot={{ r: 8 }} strokeDasharray="5 5" strokeWidth={3} />,
-            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight_friend" stroke="#3344ff" activeDot={{ r: 8 }} strokeWidth={3} />,
+            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight_friend" stroke="#4b58ea" activeDot={{ r: 8 }} strokeWidth={3} />,
             <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight" stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />,
-            <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight_friend" stroke="#3344ff" fillOpacity={0.5} fill="#3344ff" legendType='none' />
+            <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey="weight_friend" stroke="#4b58ea" fillOpacity={0.5} fill="#4b58ea" legendType='none' />
         <Legend />
       </ComposedChart>
     </ResponsiveContainer>
