@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
 import CreateGraphFriend from "../Utils/CreateGraphFriend";
 import MenuItem from '@mui/material/MenuItem';

@@ -27,7 +27,6 @@ export function Dashboard({ athleteName, athleteList }) {
   const [friend, setFriend] = useState(null);
 
   const openAthlete = Boolean(anchorAthlete);
-  const navigate = useNavigate();
   const [graphAlignment, setGraphAlignment] = useState('1RM');
   const handleGraphChange = (event, newGraphAlignment) => {
     setGraphAlignment(newGraphAlignment);

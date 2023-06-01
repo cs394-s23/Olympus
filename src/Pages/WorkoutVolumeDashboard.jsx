@@ -22,7 +22,6 @@ function WorkoutVolumeDashboard({ athlete_name, athlete_list }) {
         'Pull 2',
         'Legs 2'
     ];
-    let navigate = useNavigate();
     const [pointsToGraph, setPointsToGraph] = useState([]);
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
