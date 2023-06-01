@@ -44,7 +44,8 @@ const App = () => {
 
   const [anchorAthlete, setAnchorAthlete] = useState(null);
   const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
-  const {alignmentAthlete, updateAlignmentAthlete} = useContext(UserContext)
+  // const {alignmentAthlete, updateAlignmentAthlete} = useContext(UserContext)
+  const [alignmentAthlete, updateAlignmentAthlete] = useState('Scott');
 
   const openAthlete = Boolean(anchorAthlete);
 
@@ -137,7 +138,7 @@ const App = () => {
                       <br />
                       <br />
                       <Link to="/dashboard">
-                      <Button variant="contained">
+                      <Button variant="contained" data-testid="continue-button">
                         Continue
                       </Button>
                       </Link>

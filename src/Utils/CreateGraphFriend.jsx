@@ -30,8 +30,8 @@ function CreateGraphFriend({ points, dashboardType, compareBool }) {
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip content={<GraphTooltip compare_bool={compareBool}/>} wrapperStyle={{ backgroundColor: "transparent", fontWeight: "bold" }} />
 
-            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm" : "weight"} stroke="#84d896" activeDot={{ r: 9 }}  strokeWidth={3} name={dashboardType === "1RM" ? "Your Expected 1RM" : "Your Total Volume"}/>,
-            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm_friend" : "weight_friend"} stroke="#4b58ea" activeDot={{ r: 9 }} strokeWidth={3} name={dashboardType === "1RM" ? "Friend's Expected 1RM" : "Friend's Total Volume"}/>,
+            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm" : "weight"} stroke="#84d896" activeDot={{ r: 1 }}  strokeWidth={3} name={dashboardType === "1RM" ? "Your Expected 1RM" : "Your Total Volume"}/>,
+            <Line connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm_friend" : "weight_friend"} stroke="#4b58ea" activeDot={{ r: 1 }} strokeWidth={3} name={dashboardType === "1RM" ? "Friend's Expected 1RM" : "Friend's Total Volume"}/>,
             {/* <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm" : "weight"} stroke="#84d896" fillOpacity={0.5} fill="#84d896" legendType='none' />, */}
             {/* <Area connectNulls={true} isAnimationActive={true} type="monotone" dataKey={dashboardType === "1RM" ? "e1rm_friend" : "weight_friend"} stroke="#4b58ea" fillOpacity={0.5} fill="#4b58ea" legendType='none' /> */}
         <Legend />

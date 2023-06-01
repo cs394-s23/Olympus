@@ -14,7 +14,6 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { calculatePriorDate, parseDate } from "../Utils/DateUtils";
 
 function OneRMDashboard({ athlete_name, athlete_list }) {
-    let navigate = useNavigate();
 
     const [pointsToGraph, setPointsToGraph] = useState([]);
     const [pointsToGraphFriend, setPointsToGraphFriend] = useState([]);

@@ -3,7 +3,7 @@ import GraphTooltip from './GraphTooltip';
 
 function CreateGraph({ points, dashboardType, compareBool }) {
   return (
-    <ResponsiveContainer width={800} height={500} id="graph-container">
+    // <ResponsiveContainer id="graph-container">
       <ComposedChart
         width={800}
         height={500}
@@ -36,7 +36,7 @@ function CreateGraph({ points, dashboardType, compareBool }) {
           
         <Legend />
       </ComposedChart>
-    </ResponsiveContainer>
+    // </ResponsiveContainer>
   )
 }
 export default CreateGraph;

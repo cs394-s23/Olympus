@@ -87,8 +87,8 @@ export function Dashboard({ athleteName, athleteList }) {
         aria-label="Platform"
         id="date-toggle"
       >
-        <ToggleButton value="volume">Workout Volume Dashboard </ToggleButton>
-        <ToggleButton value="1RM">1 Rep Max Dashboard</ToggleButton>
+        <ToggleButton value="volume" data-testid="dashboard-toggle-volume">Workout Volume Dashboard </ToggleButton>
+        <ToggleButton value="1RM" data-testid="dashboard-toggle-e1rm">1 Rep Max Dashboard</ToggleButton>
       </ToggleButtonGroup>
 
 
