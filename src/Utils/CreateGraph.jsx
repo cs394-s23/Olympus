@@ -1,7 +1,7 @@
 import { ComposedChart, AreaChart, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area } from 'recharts';
 import GraphTooltip from './GraphTooltip';
 
-function CreateGraph({ points, dashboardType }) {
+function CreateGraph({ points, dashboardType, compareBool }) {
   return (
     <ResponsiveContainer width={800} height={500} id="graph-container">
       <ComposedChart

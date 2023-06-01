@@ -19,7 +19,7 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
     const [pointsToGraph, setPointsToGraph] = useState([]);
     const [pointsToGraphFriend, setPointsToGraphFriend] = useState([]);
     const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
-    const [anchorAthlete, setAnchorAthlete] = useState(null);
+    const [anchorAthlete, setAnchorAthlete] = useState(null);  
     const [alignmentAthlete, updateAlignmentAthlete] = useState(athlete_list[0]);
     const [checked, setChecked] = useState(false);
     const openAthlete = Boolean(anchorAthlete);
@@ -225,8 +225,8 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
                 <h3>This is your estimated 1 rep max progress for {alignment}: </h3>
                 <div id="graph">
                     {checked 
-                    ? <CreateGraphFriend points={pointsToGraph} dashboardType="1RM"/>
-                    : <CreateGraph points={pointsToGraph} dashboardType="1RM"/>}         
+                    ? <CreateGraphFriend points={pointsToGraph} dashboardType="1RM" compareBool={checked}/>
+                    : <CreateGraph points={pointsToGraph} dashboardType="1RM" compareBool={checked}/>}         
                 </div>
             </div>
             <ToggleButtonGroup
