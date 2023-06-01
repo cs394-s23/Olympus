@@ -38,6 +38,7 @@ describe('Volume dashboard tests', () => {
 
     //Push 1 is default
     expect(split.textContent).toContain('Push 1');
+    //Test fail:
     expect(split.textContent).not.toContain('Push 2');
   });
 

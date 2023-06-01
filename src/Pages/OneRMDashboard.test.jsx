@@ -36,6 +36,7 @@ describe('E1RM Dashboard Tests', () => {
     var exerciseItem = screen.getByTestId('workout-Bench Press');
     fireEvent.click(exerciseItem);
     expect(exercises.textContent).toContain('Bench Press');
+    //Test fail:
     expect(exercises.textContent).not.toContain('Squat');
   });
 
