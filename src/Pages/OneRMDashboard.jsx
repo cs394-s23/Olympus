@@ -109,12 +109,9 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
                 }
             })
 
-            
-            /// Friend's data:
+            //Friend's data
             if (checked) {
                 let friend_data = new_data_1RM[alignmentAthlete];
-                // setAlignment(newAlignment);
-                // let newFriendDataPoints = [];
                 friend_data[newAlignment].forEach(item => {
                     if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
                         let point = new Object();
@@ -128,9 +125,6 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
                 })
             }
 
-            // else {
-            //     setPointsToGraphFriend([]);
-            // }
             let maxDataPoints = [];
                 newDataPoints.forEach(item => {
                 var itemDate = new Date(item.date_string)
@@ -169,19 +163,12 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
             else if (newDateAlignment === "6 month") {
                 setStartDate(calculatePriorDate(6));
             }
-            // else if (newDateAlignment === "1 month") {
-            //     setStartDate(calculatePriorDate(1));
-            // }
         }
         handleChange(null, alignment);
     };
 
     return (
         <div>
-            <br></br>
-            {/* <h2>This is your progress for your estimated 1 rep maxes</h2> */}
-            <br></br>
-            {/* <h3>Select your exercise here:</h3> */}
             <div>
                 <Button
                     id="demo-customized-button"
@@ -238,7 +225,6 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
                 <ToggleButton value="all">All time</ToggleButton>
                 <ToggleButton value="6 month">Last 6 months</ToggleButton>
                 <ToggleButton value="3 month">Last 3 months</ToggleButton>
-                {/* <ToggleButton value="1 month">Last month</ToggleButton> */}
             </ToggleButtonGroup>
             <div>
                 <Checkbox checked={checked} onChange={handleCheck} />

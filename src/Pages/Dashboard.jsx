@@ -15,9 +15,10 @@ import OneRMDashboard from './OneRMDashboard';
 import WorkoutVolumeDashboard from './WorkoutVolumeDashboard';
 import { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../Utils/UserProvider';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export function Dashboard({ athleteName, athleteList }) {
+  let navigate = useNavigate();
   const [anchorAthlete, setAnchorAthlete] = useState(null);
   const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
   // const {alignmentAthlete} = useContext(UserContext);
@@ -63,7 +64,7 @@ export function Dashboard({ athleteName, athleteList }) {
 
       </Button> */}
       <List >
-        <ListItem sx={{ width: "50%", marginLeft: "auto", marginRight: "auto" , marginBottom: "-15px"}}>
+        <ListItem sx={{ width: "50%", marginLeft: "auto", marginRight: "auto", marginBottom: "-15px" }}>
           <ListItemAvatar>
             <Avatar>
               <ImageIcon />
@@ -72,10 +73,12 @@ export function Dashboard({ athleteName, athleteList }) {
           <ListItemText primary={athleteName} secondary="Member since 4/13/2022" />
           {/* <ListItem></ListItem> */}
         </ListItem>
-        <ListItem sx={{ width: "50%", marginLeft: "25%", marginRight: "20%", paddingLeft: "60px"}}>
+        <ListItem sx={{ width: "50%", marginLeft: "25%", marginRight: "20%", paddingLeft: "60px" }}>
+          {/* <Link to="/dashboard"> */}
             <Button onClick={() => navigate("/")}>
               Switch User
             </Button>
+          {/* </Link> */}
         </ListItem>
       </List>
       <ToggleButtonGroup

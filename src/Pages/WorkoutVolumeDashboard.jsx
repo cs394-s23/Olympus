@@ -97,13 +97,10 @@ function WorkoutVolumeDashboard({ athlete_name, athlete_list }) {
                     newDataPoints.push(point);
                 }
             })
-
             
             /// Friend's data:
             if (checked) {
                 let friend_data = new_data_volume[alignmentAthlete];
-                // setAlignment(newAlignment);
-                // let newFriendDataPoints = [];
                 friend_data[newAlignment].forEach(item => {
                     if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
                         let point = new Object();
@@ -115,9 +112,6 @@ function WorkoutVolumeDashboard({ athlete_name, athlete_list }) {
                 })
             }
 
-            // else {
-            //     setPointsToGraphFriend([]);
-            // }
             let maxDataPoints = [];
                 newDataPoints.forEach(item => {
                 var itemDate = new Date(item.date_string)

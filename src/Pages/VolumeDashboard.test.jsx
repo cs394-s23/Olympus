@@ -1,6 +1,7 @@
 import { describe, expect, test, it } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Dashboard } from './Dashboard';
+import { BrowserRouter } from 'react-router-dom';
 
 // This tests the Volume Dashboard for a single user
 
@@ -22,7 +23,10 @@ const athletes = [
 const athleteName = "Scott"
 
 it('volume dashboard renders', () => {
-  render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+  render(
+    <BrowserRouter>
+      <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+    </BrowserRouter>);
   screen.getByText("Workout Volume Dashboard");
 });
 
@@ -30,7 +34,10 @@ it('volume dashboard renders', () => {
 describe('Volume dashboard tests', () => {
 
   it('Push 1 test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const volumeDashboard = screen.getByTestId("dashboard-toggle-volume");
     fireEvent.click(volumeDashboard);
 
@@ -43,7 +50,10 @@ describe('Volume dashboard tests', () => {
   });
 
   it('Push 2 test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const volumeDashboard = screen.getByTestId("dashboard-toggle-volume");
     fireEvent.click(volumeDashboard);
 
@@ -56,7 +66,10 @@ describe('Volume dashboard tests', () => {
   });
 
   it('Pull 1 test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const volumeDashboard = screen.getByTestId("dashboard-toggle-volume");
     fireEvent.click(volumeDashboard);
 
@@ -69,7 +82,10 @@ describe('Volume dashboard tests', () => {
   });
 
   it('Pull 2 test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const volumeDashboard = screen.getByTestId("dashboard-toggle-volume");
     fireEvent.click(volumeDashboard);
 
@@ -82,7 +98,10 @@ describe('Volume dashboard tests', () => {
   });
 
   it('Legs 1 test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const volumeDashboard = screen.getByTestId("dashboard-toggle-volume");
     fireEvent.click(volumeDashboard);
 
@@ -95,7 +114,10 @@ describe('Volume dashboard tests', () => {
   });
 
   it('Legs 2 test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const volumeDashboard = screen.getByTestId("dashboard-toggle-volume");
     fireEvent.click(volumeDashboard);
 

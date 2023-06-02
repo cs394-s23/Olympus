@@ -1,6 +1,7 @@
 import { describe, expect, test, it } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Dashboard } from './Dashboard';
+import { BrowserRouter } from 'react-router-dom';
 
 // This tests the E1RM Dashboard for a single user
 
@@ -22,26 +23,35 @@ const athletes = [
 const athleteName = "Scott"
 
 it('e1rm dashboard renders', () => {
-  render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+  render(
+    <BrowserRouter>
+      <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+    </BrowserRouter>);
   screen.getByText("1 Rep Max Dashboard");
 });
 
 
 describe('E1RM Dashboard Tests', () => {
-
   it('Bench Press test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const exercises = screen.getByTestId('workout-options');
     fireEvent.click(exercises);
     var exerciseItem = screen.getByTestId('workout-Bench Press');
     fireEvent.click(exerciseItem);
     expect(exercises.textContent).toContain('Bench Press');
+    
     //Test fail:
     expect(exercises.textContent).not.toContain('Squat');
   });
 
   it('Squat test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const exercises = screen.getByTestId('workout-options');
     fireEvent.click(exercises);
     var exerciseItem = screen.getByTestId('workout-Squat');
@@ -50,7 +60,10 @@ describe('E1RM Dashboard Tests', () => {
   });
 
   it('Deadlift test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
     const exercises = screen.getByTestId('workout-options');
     fireEvent.click(exercises);
     var exerciseItem = screen.getByTestId('workout-Deadlift');
@@ -59,7 +72,10 @@ describe('E1RM Dashboard Tests', () => {
   });
 
   it('Military Press test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
 
     const exercises = screen.getByTestId('workout-options');
     fireEvent.click(exercises);
@@ -69,7 +85,10 @@ describe('E1RM Dashboard Tests', () => {
   });
 
   it('Barbell Row test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
 
     const exercises = screen.getByTestId('workout-options');
     fireEvent.click(exercises);
@@ -79,7 +98,10 @@ describe('E1RM Dashboard Tests', () => {
   });
 
   it('Front Squat test', () => {
-    render(<Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />);
+    render(
+      <BrowserRouter>
+        <Dashboard athleteName={athleteName} athleteList={athletes.filter(name => name !== athleteName)} />
+      </BrowserRouter>);
 
     const exercises = screen.getByTestId('workout-options');
     fireEvent.click(exercises);

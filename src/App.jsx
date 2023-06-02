@@ -44,7 +44,6 @@ const App = () => {
 
   const [anchorAthlete, setAnchorAthlete] = useState(null);
   const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
-  // const {alignmentAthlete, updateAlignmentAthlete} = useContext(UserContext)
   const [alignmentAthlete, updateAlignmentAthlete] = useState('Scott');
 
   const openAthlete = Boolean(anchorAthlete);
@@ -85,8 +84,6 @@ const App = () => {
     <div className="App">
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-
-        <div></div>
         <BrowserRouter>
           <Routes>
             <Route path="/register" element={<Register />} />
@@ -96,9 +93,6 @@ const App = () => {
                 <div>
                   <Layout />
                   <div>
-                      {/* <Button variant="contained" href="/register">
-                        Register
-                      </Button> */}
                       <h1>Choose a user:</h1>
                       <Button
                         id="athelete-menu"
