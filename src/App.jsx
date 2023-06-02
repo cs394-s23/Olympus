@@ -32,7 +32,7 @@ const App = () => {
     "Kevin",
     "Kahlin",
     "Josh",
-    "Mark",
+    "Jaris",
     "Thomas",
     "Cate",
     "Madi",
