@@ -6,7 +6,7 @@ export const parseDate = (dateString) => {
     if (day.length === 1){
         day = "0" + day;
     }
-    return new Date(`${year}-${month}-${day}`);
+    return new Date(`${year}-${month}-${day}T00:00:00`);
 }
 
 export const calculatePriorDate = (priorMonths) => {
