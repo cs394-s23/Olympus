@@ -1,24 +1,7 @@
 import { describe, expect, test, it } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import GraphTooltip from './GraphTooltip';
-import { BrowserRouter } from 'react-router-dom';
 
-const athletes = [
-  "Scott",
-  "Kevin",
-  "Kahlin",
-  "Josh",
-  "Mark",
-  "Thomas",
-  "Cate",
-  "Madi",
-  "Leigh",
-  "Chaitra",
-  "Mariel",
-  "Jordan",
-];
-
-const athleteName = "Scott"
 
 describe('Graph Tooltip tests', () => {
   it('Tooltip for comparison with friends, your e1rm', () => {
