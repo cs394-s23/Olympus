@@ -12,6 +12,9 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Checkbox from '@mui/material/Checkbox';
 import new_data_volume from "../../new_data_volume.json";
 import { calculatePriorDate, parseDate } from "../Utils/DateUtils";
+import { parseVolumeData, getMaxVolumeDataPoints } from "../Utils/DataUtils";
+
+
 
 function WorkoutVolumeDashboard({ athlete_name, athlete_list }) {
     const options = [
@@ -87,55 +90,16 @@ function WorkoutVolumeDashboard({ athlete_name, athlete_list }) {
         } else {
             let data = new_data_volume[athlete_name];
             setAlignment(newAlignment);
-            let newDataPoints = [];
-            data[newAlignment].forEach(item => {
-                if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
-                    let point = new Object();
-                    point.weight = parseFloat(item["Volume"]);
-                    point.date = parseDate(item["Date"]);
-                    point.date_string = item["Date"];
-                    newDataPoints.push(point);
-                }
-            })
+            let newDataPoints = parseVolumeData(data[newAlignment]);
             
             /// Friend's data:
             if (checked) {
                 let friend_data = new_data_volume[alignmentAthlete];
-                friend_data[newAlignment].forEach(item => {
-                    if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
-                        let point = new Object();
-                        point.weight_friend = parseFloat(item["Volume"]);
-                        point.date = parseDate(item["Date"]);
-                        point.date_string = item["Date"];
-                        newDataPoints.push(point);
-                    }
-                })
+                let friendDataPoints = parseVolumeData(friend_data[newAlignment], true);
+                newDataPoints = newDataPoints.concat(friendDataPoints);
             }
 
-            let maxDataPoints = [];
-                newDataPoints.forEach(item => {
-                var itemDate = new Date(item.date_string)
-                var minDate = new Date(startDate);
-                if (itemDate < minDate) {
-                    null;
-                }
-                else {
-                    if (maxDataPoints.length === 0) {
-                        maxDataPoints.push(item);
-                    } else if (maxDataPoints[maxDataPoints.length - 1].date_string !== item.date_string) {
-                        maxDataPoints.push(item);
-                    } else {
-                        if(!maxDataPoints[maxDataPoints.length - 1].weight_friend){
-                            maxDataPoints[maxDataPoints.length - 1].weight += item.weight;
-                        }
-                        else {
-                            maxDataPoints[maxDataPoints.length - 1].weight_friend += item.weight_friend;
-                        }
-                    }
-                }
-            })
-            
-            maxDataPoints.sort((a, b) => a.date - b.date)
+            let maxDataPoints = getMaxVolumeDataPoints(newDataPoints, startDate);
             setPointsToGraph(maxDataPoints);
         }
     

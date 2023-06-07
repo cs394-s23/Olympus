@@ -12,7 +12,7 @@ describe('Date utils tests', () => {
 
     let testDate2 = "11/3/0021"
     let testOutput2 = parseDate(testDate2);
-    console.log(testOutput2);
+    // console.log(testOutput2);
     expect(testOutput2.getDate()).toBe(3);
     expect(testOutput2.getMonth()).toBe(10)  // Only months start at 0 in JS...
     expect(testOutput2.getFullYear()).toBe(21);

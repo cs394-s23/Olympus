@@ -10,7 +10,8 @@ import Checkbox from '@mui/material/Checkbox';
 import new_data_1RM from "../../new_data_1RM.json";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { calculatePriorDate, parseDate } from "../Utils/DateUtils";
+import { calculatePriorDate } from "../Utils/DateUtils";
+import { parseOneRMData, getMaxOneRMDataPoints } from "../Utils/DataUtils";
 
 function OneRMDashboard({ athlete_name, athlete_list }) {
 
@@ -22,8 +23,6 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
     const [checked, setChecked] = useState(false);
     const openAthlete = Boolean(anchorAthlete);
 
-    console.log(alignmentAthlete);
-    console.log(new_data_1RM[alignmentAthlete]);
     const options = [
         'Bench Press',
         'Squat',
@@ -96,54 +95,16 @@ function OneRMDashboard({ athlete_name, athlete_list }) {
         } else {
             let data = new_data_1RM[athlete_name];
             setAlignment(newAlignment);
-            let newDataPoints = [];
-            data[newAlignment].forEach(item => {
-                if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
-                    let point = new Object();
-                    point.e1rm = parseFloat(item["E 1RM"]);
-                    point.weight = parseFloat(item["Weight"]);
-                    point.reps = parseInt(item["Reps"], 10);
-                    point.date = parseDate(item["Date"]);
-                    point.date_string = item["Date"];
-                    newDataPoints.push(point);
-                }
-            })
+            let newDataPoints = parseOneRMData(data[newAlignment]);
 
             //Friend's data
             if (checked) {
                 let friend_data = new_data_1RM[alignmentAthlete];
-                friend_data[newAlignment].forEach(item => {
-                    if (item !== null && item["E 1RM"] !== "" && item["Weight"] !== "#VALUE!") {
-                        let point = new Object();
-                        point.e1rm_friend = parseFloat(item["E 1RM"]);
-                        point.weight_friend = parseFloat(item["Weight"]);
-                        point.reps = parseInt(item["Reps"], 10);
-                        point.date = parseDate(item["Date"]);
-                        point.date_string = item["Date"];
-                        newDataPoints.push(point);
-                    }
-                })
+                let friendDataPoints = parseOneRMData(friend_data[newAlignment], true);
+                newDataPoints = newDataPoints.concat(friendDataPoints);
             }
 
-            let maxDataPoints = [];
-                newDataPoints.forEach(item => {
-                var itemDate = new Date(item.date_string)
-                var minDate = new Date(startDate);
-                if (itemDate < minDate) {
-                    null;
-                }
-                else {
-                    if (maxDataPoints.length === 0) {
-                        maxDataPoints.push(item);
-                    } else if (maxDataPoints[maxDataPoints.length - 1].date_string !== item.date_string) {
-                        maxDataPoints.push(item);
-                    } else if (maxDataPoints[maxDataPoints.length - 1].e1rm < item.e1rm || (checked && maxDataPoints[maxDataPoints.length - 1].e1rm_friend < item.e1rm_friend)) {
-                        maxDataPoints[maxDataPoints.length - 1] = item;
-                    }
-                }
-            })
-            
-            maxDataPoints.sort((a, b) => a.date - b.date)
+            let maxDataPoints = getMaxOneRMDataPoints(newDataPoints, startDate, checked);
             setPointsToGraph(maxDataPoints);
         }
     

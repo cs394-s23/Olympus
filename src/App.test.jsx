@@ -22,5 +22,6 @@ describe('App tests', () => {
     fireEvent.click(menuItem);
 
     expect(menu.textContent).toContain('Josh');
+    expect(menu.textContent).not.toContain('Kevin');
   });
 });

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const GraphTooltip = ({ active, payload, label, compare_bool }) => {
-  console.log(payload);
   if (active && payload && payload.length) {
     return (
       <div>
