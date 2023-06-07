@@ -1,6 +1,4 @@
-import data_volume from "../../data_volume.json";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import CreateGraph from "../Utils/CreateGraph";
 import CreateGraphFriend from "../Utils/CreateGraphFriend";
 import ToggleButton from '@mui/material/ToggleButton';
@@ -11,7 +9,7 @@ import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Checkbox from '@mui/material/Checkbox';
 import new_data_volume from "../../new_data_volume.json";
-import { calculatePriorDate, parseDate } from "../Utils/DateUtils";
+import { calculatePriorDate } from "../Utils/DateUtils";
 import { parseVolumeData, getMaxVolumeDataPoints } from "../Utils/DataUtils";
 
 

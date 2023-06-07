@@ -1,16 +1,12 @@
-import { useState, useEffect, useContext } from "react";
-import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
 import { db } from "../firebase";
 import {
-  getDatabase,
   ref,
-  query,
-  orderByChild,
   get,
   child,
 } from "firebase/database";
-import { Router, BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Layout from "./Utils/Layout";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -21,11 +17,9 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Register } from "./Pages/Register";
 import "./style.scss";
 import { Dashboard } from "./Pages/Dashboard";
-import { UserContext } from "./Utils/UserProvider";
 
 
 const App = () => {
-  const [count, setCount] = useState(0);
 
   const athletes = [
     "Scott",

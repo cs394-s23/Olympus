@@ -3,7 +3,6 @@ import CreateGraph from "../Utils/CreateGraph";
 import CreateGraphFriend from "../Utils/CreateGraphFriend";
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { set } from "firebase/database";
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Checkbox from '@mui/material/Checkbox';
@@ -16,7 +15,6 @@ import { parseOneRMData, getMaxOneRMDataPoints } from "../Utils/DataUtils";
 function OneRMDashboard({ athlete_name, athlete_list }) {
 
     const [pointsToGraph, setPointsToGraph] = useState([]);
-    const [pointsToGraphFriend, setPointsToGraphFriend] = useState([]);
     const [selectedIndexAthlete, setSelectedIndexAthlete] = useState(0);
     const [anchorAthlete, setAnchorAthlete] = useState(null);  
     const [alignmentAthlete, updateAlignmentAthlete] = useState(athlete_list[0]);
