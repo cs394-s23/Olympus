@@ -43,7 +43,7 @@
         <li><a href="#test">Test</a></li>
         <li><a href="#scripts">Scripts</a></li>
         <li><a href="#firebase">Firebase</a></li>
-          <li><a href="#data">Data & User Authentication</a></li>
+          <li><a href="#data--user-authentication">Data & User Authentication</a></li>
         <li><a href="#notes">Notes</a></li>
       </ul>
     </li>
@@ -56,7 +56,7 @@
 
 ## About The Project
 
-A web app that allows users to keep track of their progression in weight-lifting with graphs to see the progress visually.
+A web app that allows users to keep track of their progression in weight-lifting with graphs and see the progress visually.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
